@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BE7483A40768EAC4FEB66970 /* Pods_ios_sdk_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */; };
 		F67C5C532A5183A8009BA097 /* ios_sdk_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */; };
-		F67C5C552A5183A8009BA097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C542A5183A8009BA097 /* ContentView.swift */; };
 		F67C5C572A5183A8009BA097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C562A5183A8009BA097 /* Assets.xcassets */; };
 		F67C5C5A2A5183A8009BA097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C592A5183A8009BA097 /* Preview Assets.xcassets */; };
 		F685E60F2A829FEC009EDC71 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685E60E2A829FEC009EDC71 /* HomeView.swift */; };
@@ -42,7 +41,6 @@
 		F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67C5C4F2A5183A8009BA097 /* ios-sdk-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_sdk_exampleApp.swift; sourceTree = "<group>"; };
-		F67C5C542A5183A8009BA097 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F67C5C562A5183A8009BA097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F67C5C592A5183A8009BA097 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F685E60E2A829FEC009EDC71 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				F685E6172A82C0A6009EDC71 /* Models */,
 				F685E60D2A829FDA009EDC71 /* Views */,
 				F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */,
-				F67C5C542A5183A8009BA097 /* ContentView.swift */,
 				F67C5C562A5183A8009BA097 /* Assets.xcassets */,
 				F67C5C582A5183A8009BA097 /* Preview Content */,
 			);
@@ -318,7 +315,6 @@
 				F685E60F2A829FEC009EDC71 /* HomeView.swift in Sources */,
 				F685E61D2A83FCDF009EDC71 /* PairViewModel.swift in Sources */,
 				F6D7AC352A9748D900ECC123 /* LoadingView.swift in Sources */,
-				F67C5C552A5183A8009BA097 /* ContentView.swift in Sources */,
 				F6D7AC312A9748D900ECC123 /* ShakeEffect.swift in Sources */,
 				F6D7AC222A96AF6E00ECC123 /* HardwareMonitorModel.swift in Sources */,
 				F68F4B9B2A89198D006FA387 /* PairDeviceView.swift in Sources */,
@@ -464,6 +460,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "TECI Save";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth permission required";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -495,6 +492,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "TECI Save";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth permission required";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

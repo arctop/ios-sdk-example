@@ -16,8 +16,6 @@ struct SplashView : View {
     var body: some View {
         
             if (!viewModel.clientInit){
-                /*ModalErrorView(isShowing: !hardwareMonitor.networkAvailable,
-                               contentMessage: "No internet access is available. Make sure you are connected" , titleMessage: "Network error"){*/
                     VStack(alignment: .center,spacing: 10){
                         Spacer()
                         Image(lightSplashImage)
@@ -31,13 +29,9 @@ struct SplashView : View {
                         }
                         Spacer()
                     }
-                    
-              //  }
             }
             else{
                 if (viewModel.userLoggedInStatus){
-                    /*ModalErrorView(isShowing: !hardwareMonitor.networkAvailable,
-                                   contentMessage: "No internet access is available. Make sure you are connected" , titleMessage: "Network error"){*/
                         VStack{
                             Image("stanford_header")
                                 .scaledToFill().padding()
@@ -96,11 +90,8 @@ struct SplashView : View {
                         
                         }.padding()
                     Spacer()
-                   // }
                 }
                 else{
-                   /* ModalErrorView(isShowing: !hardwareMonitor.networkAvailable,
-                                   contentMessage: "No internet access is available. Make sure you are connected" , titleMessage: "Network error"){*/
                     VStack{
                         Image("stanford_header")
                             .scaledToFill().padding()
@@ -109,7 +100,6 @@ struct SplashView : View {
                         LoginView(viewModel: viewModel)
                             .errorAlert(error: $viewModel.lastError).padding()
                     Spacer()
-                    //}
                 }
             }
         }
