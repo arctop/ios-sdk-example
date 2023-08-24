@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8EC09660-2D4E-465D-A32B-7789171B4044"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D0A61D1-DB24-493E-B9C7-55E94362420C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "initClient()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8D0A61D1-DB24-493E-B9C7-55E94362420C - b509c061efdb1b5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ios_sdk_example.ViewModel.initClient() async -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "8D0A61D1-DB24-493E-B9C7-55E94362420C - b509c061efdb1b97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ios_sdk_example.ViewModel.initClient() async -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "8D0A61D1-DB24-493E-B9C7-55E94362420C - b509c061efdb1aeb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ios_sdk_example.ViewModel.initClient() async -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "711260F5-B08F-4E26-97CA-8FF782BBBE5C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "login(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "711260F5-B08F-4E26-97CA-8FF782BBBE5C - cdc64ce132b8dc9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ios_sdk_example.ViewModel.login(email: Swift.String, password: Swift.String) async -&gt; Swift.Result&lt;Swift.Bool, Swift.Error&gt;"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "711260F5-B08F-4E26-97CA-8FF782BBBE5C - cdc64ce132b8dc9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ios_sdk_example.ViewModel.login(email: Swift.String, password: Swift.String) async -&gt; Swift.Result&lt;Swift.Bool, Swift.Error&gt;"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "593685F3-C448-44F9-903B-95D574EDBA28"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Models/PairViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "onDeviceListUpdated(museDeviceList:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "593685F3-C448-44F9-903B-95D574EDBA28 - d23ce82bd6070259"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_sdk_example.PairViewModel.onDeviceListUpdated(museDeviceList: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/PairViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "593685F3-C448-44F9-903B-95D574EDBA28 - bf71d3c0e0352a3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in ios_sdk_example.PairViewModel.onDeviceListUpdated(museDeviceList: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/PairViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9B1F35C-B46B-41A4-B345-9C6BC882E9F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "onDeviceListUpdated(museDeviceList:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9B1F35C-B46B-41A4-B345-9C6BC882E9F9 - 2575d76a70c265c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_sdk_example.ViewModel.onDeviceListUpdated(museDeviceList: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "D9B1F35C-B46B-41A4-B345-9C6BC882E9F9 - 2575d76a70c266a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_sdk_example.ViewModel.onDeviceListUpdated(museDeviceList: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78973197-2B59-4221-AA53-A148991EA64F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "checkNeuosUserCalibrationStatus()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78973197-2B59-4221-AA53-A148991EA64F - 5aee14316a132056"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for NeuosSDK.NeuosSDKClient.checkNeuosUserCalibrationStatus() async -&gt; Swift.Result&lt;NeuosSDK.NeuosUserCalibrationStatus, Swift.Error&gt;"
+                  moduleName = "NeuosSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "78973197-2B59-4221-AA53-A148991EA64F - b6ba6bd1233f865d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for NeuosSDK.NeuosSDKClient.checkNeuosUserCalibrationStatus() async -&gt; Swift.Result&lt;NeuosSDK.NeuosUserCalibrationStatus, Swift.Error&gt;"
+                  moduleName = "NeuosSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "78973197-2B59-4221-AA53-A148991EA64F - ad5709b3f26054"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for NeuosSDK.NeuosSDKClient.checkNeuosUserCalibrationStatus() async -&gt; Swift.Result&lt;NeuosSDK.NeuosUserCalibrationStatus, Swift.Error&gt;"
+                  moduleName = "NeuosSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "78973197-2B59-4221-AA53-A148991EA64F - 6b03335637004029"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for NeuosSDK.NeuosSDKClient.checkNeuosUserCalibrationStatus() async -&gt; Swift.Result&lt;NeuosSDK.NeuosUserCalibrationStatus, Swift.Error&gt;"
+                  moduleName = "NeuosSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9436EF20-8278-4EC5-8618-22AE3AD15B4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "isUserLoggedIn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B913FA1-ED05-4428-ADF8-074145483A77"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../neuos-ios-framework/neuosSDK/NeuosIO/NeuosIOClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "getCurrentUserId()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3FA1588-0EDC-4015-91D2-A7EB1308A66D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Views/SplashView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07D876B8-3ABA-4ED8-8B3D-1B71B00E9BA6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Views/SplashView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "07D876B8-3ABA-4ED8-8B3D-1B71B00E9BA6 - 566a891cedaec428"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in ios_sdk_example.SplashView.body.getter : some"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Views/SplashView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "07D876B8-3ABA-4ED8-8B3D-1B71B00E9BA6 - 3c680f34d3f54a43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in ios_sdk_example.SplashView.body.getter : some"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Views/SplashView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "07D876B8-3ABA-4ED8-8B3D-1B71B00E9BA6 - 5ccebac227f7082a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in ios_sdk_example.SplashView.body.getter : some"
+                  moduleName = "ios-sdk-example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shai/repos/ios-sdk-example/ios-sdk-example/ios-sdk-example/Views/SplashView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F50A70C9-743E-4706-BC01-0654360F209F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Views/SplashView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "397FD46D-C6EC-48D2-82B0-AD9410311B7B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../neuos-ios-framework/NeuosSDK/NeuosSDK/NeuosSDKClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "isUserLoggedIn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

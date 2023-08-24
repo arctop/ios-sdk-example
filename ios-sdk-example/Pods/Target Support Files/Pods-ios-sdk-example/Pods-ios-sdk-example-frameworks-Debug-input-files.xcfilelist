@@ -1,0 +1,2 @@
+${PODS_ROOT}/Target Support Files/Pods-ios-sdk-example/Pods-ios-sdk-example-frameworks.sh
+${PODS_XCFRAMEWORKS_BUILD_DIR}/NeuosSDK/NeuosSDK.framework/NeuosSDK
