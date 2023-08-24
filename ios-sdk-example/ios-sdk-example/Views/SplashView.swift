@@ -78,6 +78,11 @@ struct SplashView : View {
                                             Text("Checking...")
                                         }
                                     }
+                                    #if DEBUG
+                                    Button("Debug Skip"){
+                                        viewModel.onQAPassed()
+                                    }.buttonStyle(SquareButtonStyle())
+                                    #endif
                                 }
                             case .prediction:
                                 PredictionView(viewModel: viewModel).errorAlert(error: $viewModel.lastError)
