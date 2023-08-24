@@ -87,7 +87,13 @@ struct SplashView : View {
                                 }
                             case .prediction:
                                 PredictionView(viewModel: viewModel).errorAlert(error: $viewModel.lastError)
+                            case .summery:
+                                Text("Upload Successful!").font(.largeTitle).padding(.bottom)
+                                Button("Exit"){
+                                    viewModel.myViewState = .start
+                                }.buttonStyle(SquareButtonStyle()).padding(.top)
                             }
+                        
                         }.padding()
                     Spacer()
                    // }

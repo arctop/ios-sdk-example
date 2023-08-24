@@ -14,8 +14,8 @@
             filePath = "ios-sdk-example/Models/ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "initClient()"
             landmarkType = "7">
             <Locations>
@@ -77,8 +77,8 @@
             filePath = "ios-sdk-example/Models/ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "login(email:password:)"
             landmarkType = "7">
             <Locations>
@@ -173,8 +173,8 @@
             filePath = "ios-sdk-example/Models/ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "onDeviceListUpdated(museDeviceList:)"
             landmarkType = "7">
             <Locations>
@@ -410,8 +410,8 @@
             filePath = "ios-sdk-example/Views/SplashView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

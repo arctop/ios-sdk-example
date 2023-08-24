@@ -13,19 +13,19 @@ struct HomeView: View {
     var onLogoutClick: () -> Void
     var body: some View {
         VStack{
-            Button("Logout"){
+            Button("Logout Current User"){
                 onLogoutClick()
             }.buttonStyle(SquareButtonStyle()).padding(.bottom)
             switch (userCalibrationStatus){
             case .blocked , .unknown:
-                Text("Awaiting Status...").padding([.vertical])
+                Text("Checking user calibration status...").padding([.vertical])
             case .needsCalibration:
                 Text("User is not calibrated").padding([.vertical])
                 //TODO: Deep link for calibration
             case .calibrationDone:
                 Text("Your models are being processed").padding([.vertical])
             case .modelsAvailable:
-                Button("Start Prediction"){
+                Button("Begin Recording"){
                     onStartPredictions()
                 }.buttonStyle(SquareButtonStyle()).padding([.vertical])
             @unknown default:

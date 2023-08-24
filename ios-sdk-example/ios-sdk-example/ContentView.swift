@@ -72,6 +72,8 @@ struct ContentView: View {
                         }
                     }
                 }
+            case .summery:
+                EmptyView()
             }
            
         }

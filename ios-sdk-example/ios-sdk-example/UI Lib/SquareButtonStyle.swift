@@ -11,7 +11,7 @@ struct SquareButtonStyle: ButtonStyle {
 
     @State var color: Color = Color(hex: 0x8C1515)
     @State var size = CGFloat(12)
-    @State var font:Font = .title.bold()
+    @State var font:Font = .body.bold()
     @Environment(\.isEnabled) private var isEnabled: Bool
     
     func makeBody(configuration: Configuration) -> some View {

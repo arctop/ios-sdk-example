@@ -10,27 +10,100 @@ import SwiftUI
 struct PredictionView: View {
     @State var progressShowing:Bool = false
     @ObservedObject var viewModel:ViewModel
+    @State var showRetryUpload = false
+    @State var showingAddMarker = false
+    @State var inputText = ""
+    @State var addMarkerTimeStamp:Int64 = 0
+    let stanfordMarkers = ["Leave to scrub" , "Return from scrub" , "Eyes open" ,"First Cut" ,"Scope sync" ,"Long conversation" , "GoPro sync" ,
+             "Checkpoint A" , "Stitching" , "Attending off, resident on"]
+    let focusKey = "focus"
+    let enjoymentKey = "enjoyment"
+    
+    func markerButton(_ label:String) -> some View{
+        Button {
+            viewModel.setUserMarker(label, timeStamp: Date.now.unixTimeMS())
+            } label: {
+                Text(label)
+                    .padding(.horizontal, 8)
+                    .frame(width: 120 , height: 100)
+                    .foregroundColor(.white)
+                    .background(.cyan)
+                    .cornerRadius(12)
+            }
+    }
+    
     var body: some View {
         VStack{
             if (progressShowing){
-                ProgressView()
+               VStack{
+                     Spacer()
+                     SessionUploadView(currentStatus: $viewModel.currentUploadStatus, uploadProgress: $viewModel.uploadProgress,
+                                       showRetryUpload: $showRetryUpload, retryUpload: retryUpload, skipRetry: skipRetry)
+                     Spacer()
+                 }.animation(.default, value: progressShowing)
+                 
+                 
             }
             else{
-                List{
-                    Text("QA passed:\(viewModel.realtimeQaValue.0.description) , reason: \(viewModel.realtimeQaValue.1.description)")
+                Text("\(viewModel.currentTime)").font(.title2)
+                Divider()
+                if (showingAddMarker){
+                    TextField("Enter custom tag", text: $inputText).padding(.bottom)
+                    HStack{
+                        Button("Cancel",role: .cancel){
+                            withAnimation{
+                                inputText = ""
+                                showingAddMarker.toggle()
+                            }
+                        }.buttonStyle(SquareButtonStyle(color: .gray, size: 2 , font: .body))
+                        Divider()
+                        Button("Submit"){
+                            viewModel.setUserMarker(inputText, timeStamp: addMarkerTimeStamp)
+                            inputText = ""
+                            withAnimation{
+                                showingAddMarker.toggle()
+                            }
+                        }.buttonStyle(SquareButtonStyle(color: .accentColor, size: 2 , font: .body))
+                    }.frame(height: 30)
+                }
+                else{
                     
-                    ForEach(viewModel.realtimePredictionValues.keys , id: \.self){ key in
-                        Text("\(key) : \(viewModel.realtimePredictionValues[key]!.description)")
+                    Button("Enter custom tag"){
+                        addMarkerTimeStamp = Date().unixTimeMS()
+                        withAnimation{
+                            showingAddMarker.toggle()
+                        }
+                    }.buttonStyle(SquareButtonStyle(color:.gray , size: 4 , font: .body))
+                    Spacer().frame(height: 55)
+                }
+                // insert grid with buttons
+                HStack{
+                    ForEach(0..<3){ i in
+                        markerButton(stanfordMarkers[i])
                     }
-                    ForEach(viewModel.realtimeMotionData.keys , id: \.self){ key in
-                        Text("\(key) : \(viewModel.realtimeMotionData[key]!.description)")
+                }
+                HStack{
+                    ForEach(3..<6){ i in
+                        markerButton(stanfordMarkers[i])
                     }
-                }.padding(.bottom)
-                Button("Finish"){
+                }
+                HStack{
+                    ForEach(6..<9){ i in
+                        markerButton(stanfordMarkers[i])
+                    }
+                }
+                HStack{
+                    Text("Enjoyment | \(Int(viewModel.realtimePredictionValues["enjoyment"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
+                    markerButton(stanfordMarkers[9])
+                    Text("Focus | \(Int(viewModel.realtimePredictionValues["focus"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
+                    
+                }
+                Spacer()
+                Button("Stop Recording"){
                     Task{
                         await tryUploadSession()
                     }
-                }
+                }.buttonStyle(SquareButtonStyle())
             }
         }
     }
@@ -40,11 +113,21 @@ struct PredictionView: View {
         switch result {
         case .success(_):
             progressShowing = false
-            viewModel.myViewState = .start
+            viewModel.myViewState = .summery
         case .failure(let error):
             print(error)
             viewModel.lastError = LocalizedAlertError(error , title: "Uploading Session Failed")
             //showRetryUpload = true
+        }
+    }
+    private func skipRetry(){
+        progressShowing = false
+        showRetryUpload = false
+//        viewModel.userDismissedUploadFailed()
+    }
+    private func retryUpload(){
+        Task{
+            await tryUploadSession()
         }
     }
 }

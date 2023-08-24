@@ -142,6 +142,7 @@
 		F685E60D2A829FDA009EDC71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7AC2C2A9748D900ECC123 /* SessionUploadView.swift */,
 				F685E60E2A829FEC009EDC71 /* HomeView.swift */,
 				F685E6102A82A403009EDC71 /* PredictionView.swift */,
 				F68F4B9A2A89198D006FA387 /* PairDeviceView.swift */,
@@ -167,7 +168,6 @@
 				F6D7AC302A9748D900ECC123 /* LoadingIndicator.swift */,
 				F6D7AC2E2A9748D900ECC123 /* LoadingView.swift */,
 				F6D7AC2F2A9748D900ECC123 /* ModalErrorView.swift */,
-				F6D7AC2C2A9748D900ECC123 /* SessionUploadView.swift */,
 				F6D7AC2A2A9748D900ECC123 /* ShakeEffect.swift */,
 				F6D7AC2D2A9748D900ECC123 /* SquareButtonStyle.swift */,
 				F6D7AC2B2A9748D900ECC123 /* TopBarLogo.swift */,

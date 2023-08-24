@@ -10,9 +10,9 @@ import OrderedCollections
 import NeuosSDK
 import SwiftUI
 enum myViewState : String{
-    case start = "Start" , pair = "Pair" , qa = "QA" , prediction = "Prediction"
+    case start = "Start" , pair = "Pair" , qa = "QA" , prediction = "Prediction", summery = "Summery"
 }
-class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAListener{
+class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAListener , NeuosSDKSessionUploadListener{
     public let sdk = NeuosSDKClient()
     @Published public var clientInit = false
     @Published public var realtimeQaValue: (Bool , QAFailureType) = (true, .passed)
@@ -24,6 +24,10 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
     @Published public var lastError:LocalizedAlertError? = nil
     @Published var loadingShowing = false
     @Published var loadingMessage: String = "Loading..."
+    @Published var currentTime:String = ""
+    @Published public var currentUploadStatus:UploadStatus = .starting
+    @Published public var uploadProgress:Float = 0
+    private let dateFormatter = DateFormatter()
     public private(set) var noSignalColor:Color = Color(hex:0xff0411)
     public private(set) var goodSignalColor:Color = Color(hex:0x6fe100)
     public var qaModel:QAViewModel? = nil{
@@ -41,6 +45,8 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
         super.init()
         sdk.registerListener(listener: self as NeuosSDKQAListener)
         sdk.registerListener(listener: self as NeuosSDKListener)
+        dateFormatter.dateFormat = "H : mm : ss:SSS"
+        currentTime = dateFormatter.string(from: Date())
     }
     func onMotionData(motionData: [Float], motionType: NeuosSDK.MotionDataType) {
         DispatchQueue.main.async {
@@ -60,13 +66,26 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
         }
     }
     
+    func onUploadStatus(status: NeuosSDK.UploadStatus) {
+        DispatchQueue.main.async {
+            self.currentUploadStatus = status
+            if (status == .starting){
+                self.uploadProgress = 0
+            }
+            else if (status == .failed){
+                self.lastError = LocalizedAlertError(StringError("Unknown error") , title: "Uploading Session Failed")
+            }
+        }
+    }
     
-    func onSessionComplete() {
-        
+    func onUploadProgress(current: Int, total: Int) {
+        DispatchQueue.main.async {
+            self.uploadProgress = (Float(current) / Float(total)) * 100
+        }
     }
     
     func onError(errorCode: Error, message: String) {
-        
+        self.lastError = LocalizedAlertError(errorCode , title: "message")
     }
     
     func onDeviceListUpdated(museDeviceList: [String]) {
@@ -101,6 +120,10 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
     }
     
     func onConnectionChanged(previousConnection: NeuosSDK.ConnectionState, currentConnection: NeuosSDK.ConnectionState) {
+        
+    }
+    
+    func onSessionComplete() {
         
     }
     
@@ -179,11 +202,11 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
     }
     public func onQAPassed(){
         qaModel!.stop()
+        runClock()
         Task{
             let result = await sdk.startPredictionSession("zone")
             switch result{
                 case .success(_):
-                    print("OK")
                 DispatchQueue.main.async {
                     self.myViewState = .prediction
                 }
@@ -193,5 +216,15 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
             
         }
     }
-    
+    private func runClock(){
+        Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true,
+                             block: {_ in
+                self.currentTime = self.dateFormatter.string(from: Date())
+        })
+        
+    }
+    public func setUserMarker(_ text:String, timeStamp:Int64){
+        print("Setting marker: \(text) at \(timeStamp)")
+        try? sdk.writeUserMarker(text, timeStamp: timeStamp)
+    }
 }
