@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE7483A40768EAC4FEB66970 /* Pods_ios_sdk_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */; };
+		DAB3FFFE0C3F3D09D423CD46 /* Pods_ios_sdk_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */; };
 		F67C5C532A5183A8009BA097 /* ios_sdk_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */; };
 		F67C5C572A5183A8009BA097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C562A5183A8009BA097 /* Assets.xcassets */; };
 		F67C5C5A2A5183A8009BA097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C592A5183A8009BA097 /* Preview Assets.xcassets */; };
@@ -33,6 +33,7 @@
 		F6D7AC3C2A97496500ECC123 /* ColorExtensios.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC392A97496500ECC123 /* ColorExtensios.swift */; };
 		F6D7AC3D2A97496500ECC123 /* LocalizedAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC3A2A97496500ECC123 /* LocalizedAlertError.swift */; };
 		F6D7AC3E2A97496500ECC123 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC3B2A97496500ECC123 /* ViewExtensions.swift */; };
+		F6D7AC442A97BB2300ECC123 /* NeuosSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D7AC412A97B8C100ECC123 /* NeuosSDK.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F6D7AC392A97496500ECC123 /* ColorExtensios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensios.swift; sourceTree = "<group>"; };
 		F6D7AC3A2A97496500ECC123 /* LocalizedAlertError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedAlertError.swift; sourceTree = "<group>"; };
 		F6D7AC3B2A97496500ECC123 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		F6D7AC412A97B8C100ECC123 /* NeuosSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NeuosSDK.xcframework; path = "../../neuos-ios-framework/NeuosSDK/NeuosSDK.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +71,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D7AC442A97BB2300ECC123 /* NeuosSDK.xcframework in Frameworks */,
 				F6D7AC132A9282CE00ECC123 /* Collections in Frameworks */,
-				BE7483A40768EAC4FEB66970 /* Pods_ios_sdk_example.framework in Frameworks */,
 				F6D7AC172A9282CE00ECC123 /* OrderedCollections in Frameworks */,
 				F6D7AC152A9282CE00ECC123 /* DequeModule in Frameworks */,
+				DAB3FFFE0C3F3D09D423CD46 /* Pods_ios_sdk_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 		58316E7807C551E96EAAEA8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7AC412A97B8C100ECC123 /* NeuosSDK.xcframework */,
 				F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */,
 			);
 			name = Frameworks;
@@ -235,7 +239,7 @@
 			);
 			mainGroup = F67C5C462A5183A8009BA097;
 			packageReferences = (
-				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */,
 			);
 			productRefGroup = F67C5C502A5183A8009BA097 /* Products */;
 			projectDirPath = "";
@@ -535,7 +539,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
@@ -548,17 +552,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F6D7AC122A9282CE00ECC123 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
 			productName = Collections;
 		};
 		F6D7AC142A9282CE00ECC123 /* DequeModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
 			productName = DequeModule;
 		};
 		F6D7AC162A9282CE00ECC123 /* OrderedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
 			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
