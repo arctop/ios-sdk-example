@@ -93,10 +93,16 @@ struct PredictionView: View {
                     }
                 }
                 HStack{
-                    Text("Enjoyment | \(Int(viewModel.realtimePredictionValues["enjoyment"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
-                    markerButton(stanfordMarkers[9])
-                    Text("Focus | \(Int(viewModel.realtimePredictionValues["focus"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
+                    Spacer().frame(width: 120, height: 100, alignment: .center)
                     
+                    markerButton(stanfordMarkers[9])
+                    Spacer().frame(width: 120, height: 100, alignment: .center)
+                    
+                }
+                HStack{
+                    Text("Focus | \(Int(viewModel.realtimePredictionValues["focus"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
+                    Text("Heartrate | \(Int(viewModel.realtimePredictionValues["heart_rate"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
+                    Text("Enjoyment | \(Int(viewModel.realtimePredictionValues["enjoyment"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
                 }
                 Spacer()
                 Button("Stop Recording"){

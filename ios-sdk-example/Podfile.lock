@@ -1,5 +1,5 @@
 PODS:
-  - NeuosSDK (0.0.10)
+  - NeuosSDK (0.0.11)
 
 DEPENDENCIES:
   - NeuosSDK (from `/Users/shai/repos/neuos-ios-framework/NeuosSDK`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "/Users/shai/repos/neuos-ios-framework/NeuosSDK"
 
 SPEC CHECKSUMS:
-  NeuosSDK: 2d6423006cd20f97654d678c2563a024309b1da3
+  NeuosSDK: 1aace87a466b7705757645471eab5bbd371a6f0d
 
 PODFILE CHECKSUM: b07e911b652ebb2d50742ba6a28c51aef5a0baec
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0
