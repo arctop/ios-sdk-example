@@ -5,7 +5,7 @@ target 'ios-sdk-example' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for NeuosAsPodTest
-	pod 'NeuosSDK', :path => '/Users/shai/repos/neuos-ios-framework/NeuosSDK'
+  # Pods for ArctopAsPodTest
+	pod 'ArctopSDK', :path => '/Users/shai/repos/neuos-ios-framework'
 
 end

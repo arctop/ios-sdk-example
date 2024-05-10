@@ -7,14 +7,14 @@
 
 import Foundation
 import SwiftUI
-import NeuosSDK
-class PairViewModel : NSObject, ObservableObject , NeuosSDKListener{
+import ArctopSDK
+class PairViewModel : NSObject, ObservableObject , ArctopSDKListener{
     @Published var museList:[String] = []
-    func onConnectionChanged(previousConnection: NeuosSDK.ConnectionState, currentConnection: NeuosSDK.ConnectionState) {
+    func onConnectionChanged(previousConnection: ArctopSDK.ConnectionState, currentConnection: ArctopSDK.ConnectionState) {
         
     }
     
-    func onMotionData(motionData: [Float], motionType: NeuosSDK.MotionDataType) {
+    func onMotionData(motionData: [Float], motionType: ArctopSDK.MotionDataType) {
         
     }
     
@@ -22,7 +22,7 @@ class PairViewModel : NSObject, ObservableObject , NeuosSDKListener{
         
     }
     
-    func onQAStatus(passed: Bool, type: NeuosSDK.QAFailureType) {
+    func onQAStatus(passed: Bool, type: ArctopSDK.QAFailureType) {
         
     }
     

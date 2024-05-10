@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import NeuosSDK
+import ArctopSDK
 struct SplashView : View {
     private let lightSplashImage = "stanford_splash"
     @ObservedObject var viewModel:ViewModel

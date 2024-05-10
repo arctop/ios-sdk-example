@@ -1,6 +1,6 @@
 //
 //  ModalErrorView.swift
-//  NeuosCentral
+//  ArctopCentral
 //
 //  Created by Shai on 30/03/2023.
 //

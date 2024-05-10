@@ -1,6 +1,6 @@
 //
 //  LocalizedError.swift
-//  NeuosCentral
+//  ArctopCentral
 //
 //  Created by Shai on 30/01/2023.
 //

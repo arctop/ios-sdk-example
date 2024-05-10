@@ -7,19 +7,19 @@
 
 import Foundation
 import OrderedCollections
-import NeuosSDK
+import ArctopSDK
 import SwiftUI
 enum myViewState : String{
     case start = "Start" , pair = "Pair" , qa = "QA" , prediction = "Prediction", summery = "Summery"
 }
-class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAListener , NeuosSDKSessionUploadListener{
-    public let sdk = NeuosSDKClient()
+class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener , ArctopSDKSessionUploadListener{
+    public let sdk = ArctopSDKClient()
     @Published public var clientInit = false
     @Published public var realtimeQaValue: (Bool , QAFailureType) = (true, .passed)
     @Published public var realtimePredictionValues: OrderedDictionary<String, Float> = [:]
     @Published public var realtimeMotionData: OrderedDictionary<String , [Float]> = [:]
     @Published var userLoggedInStatus:Bool = false
-    @Published var userCalibrationStatus: NeuosUserCalibrationStatus = .unknown
+    @Published var userCalibrationStatus: UserCalibrationStatus = .unknown
     @Published var museList:[String] = []
     @Published public var lastError:LocalizedAlertError? = nil
     @Published var loadingShowing = false
@@ -43,12 +43,12 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
     }
     public override init() {
         super.init()
-        sdk.registerListener(listener: self as NeuosSDKQAListener)
-        sdk.registerListener(listener: self as NeuosSDKListener)
+        sdk.registerListener(listener: self as ArctopSDKQAListener)
+        sdk.registerListener(listener: self as ArctopSDKListener)
         dateFormatter.dateFormat = "H : mm : ss:SSS"
         currentTime = dateFormatter.string(from: Date())
     }
-    func onMotionData(motionData: [Float], motionType: NeuosSDK.MotionDataType) {
+    func onMotionData(motionData: [Float], motionType: ArctopSDK.MotionDataType) {
         DispatchQueue.main.async {
             self.realtimeMotionData[ motionType.rawValue ] = motionData
         }
@@ -60,13 +60,13 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
         }
     }
     
-    func onQAStatus(passed: Bool, type: NeuosSDK.QAFailureType) {
+    func onQAStatus(passed: Bool, type: ArctopSDK.QAFailureType) {
         DispatchQueue.main.async {
             self.realtimeQaValue = (passed , type)
         }
     }
     
-    func onUploadStatus(status: NeuosSDK.UploadStatus) {
+    func onUploadStatus(status: ArctopSDK.UploadStatus) {
         DispatchQueue.main.async {
             self.currentUploadStatus = status
             if (status == .starting){
@@ -119,7 +119,7 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
         
     }
     
-    func onConnectionChanged(previousConnection: NeuosSDK.ConnectionState, currentConnection: NeuosSDK.ConnectionState) {
+    func onConnectionChanged(previousConnection: ArctopSDK.ConnectionState, currentConnection: ArctopSDK.ConnectionState) {
         
     }
     
@@ -128,7 +128,7 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
     }
     
     public func initClient() async{
-        let res = await self.sdk.initializeNeuos(apiKey: "jCWv8ScSiEoX3K0m8" , bundle: Bundle(for:ViewModel.self))
+        let res = await self.sdk.initializeArctop(apiKey: "jCWv8ScSiEoX3K0m8" , bundle: Bundle(for:ViewModel.self))
         switch res{
         case .success(_):
             DispatchQueue.main.async {
@@ -154,7 +154,7 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
     }
     
     public func checkUserCalibrationStatus() async{
-        let result = await sdk.checkNeuosUserCalibrationStatus()
+        let result = await sdk.checkUserCalibrationStatus()
         switch (result){
             case .success(let value):
             DispatchQueue.main.async {
@@ -185,7 +185,7 @@ class ViewModel : NSObject, ObservableObject , NeuosSDKListener , NeuosSDKQAList
         //showLoadingWithMessage("Logging In...")
         var result:Result<Bool,Error>
         do{
-            try await sdk.loginUser(email: email, password: password)
+            try await sdk.loginUser()
             result = .success(true)
             DispatchQueue.main.async {
                 self.userLoggedInStatus = true

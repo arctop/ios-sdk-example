@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import NeuosSDK
+import ArctopSDK
 struct HomeView: View {
-    @Binding var userCalibrationStatus:NeuosUserCalibrationStatus
+    @Binding var userCalibrationStatus:UserCalibrationStatus
     var onStartPredictions: () -> Void
     var onLogoutClick: () -> Void
     var body: some View {

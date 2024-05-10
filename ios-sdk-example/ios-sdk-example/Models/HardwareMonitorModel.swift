@@ -41,7 +41,7 @@ public class HardwareMonitorModel: NSObject, CBCentralManagerDelegate , Observab
         case .poweredOff:
             return "Please turn bluetooth on"
         case .unauthorized:
-            return "Please allow Neuos to use bluetooth"
+            return "Please allow Arctop to use bluetooth"
         default:
             return"Error finding bluetooth"
         }

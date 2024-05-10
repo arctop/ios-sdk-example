@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import NeuosSDK
+import ArctopSDK
 @main
 struct ios_sdk_exampleApp: App {
     @StateObject var hardwareMonitor = HardwareMonitorModel()

@@ -1,12 +1,12 @@
 //
 //  SessionUploadView.swift
-//  NeuosCentral
+//  ArctopCentral
 //
 //  Created by Shai on 28/03/2023.
 //
 
 import SwiftUI
-import NeuosSDK
+import ArctopSDK
 struct SessionUploadView: View {
     @Binding var currentStatus: UploadStatus
     @Binding var uploadProgress:Float

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DAB3FFFE0C3F3D09D423CD46 /* Pods_ios_sdk_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */; };
 		F67C5C532A5183A8009BA097 /* ios_sdk_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */; };
 		F67C5C572A5183A8009BA097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C562A5183A8009BA097 /* Assets.xcassets */; };
 		F67C5C5A2A5183A8009BA097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C592A5183A8009BA097 /* Preview Assets.xcassets */; };
@@ -33,13 +32,22 @@
 		F6D7AC3C2A97496500ECC123 /* ColorExtensios.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC392A97496500ECC123 /* ColorExtensios.swift */; };
 		F6D7AC3D2A97496500ECC123 /* LocalizedAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC3A2A97496500ECC123 /* LocalizedAlertError.swift */; };
 		F6D7AC3E2A97496500ECC123 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC3B2A97496500ECC123 /* ViewExtensions.swift */; };
-		F6D7AC442A97BB2300ECC123 /* NeuosSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D7AC412A97B8C100ECC123 /* NeuosSDK.xcframework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F67EC2722BEE7557006DDB7D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0F2CC011E05E6AFC696C6AE3 /* Pods-ios-sdk-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-example.release.xcconfig"; path = "Target Support Files/Pods-ios-sdk-example/Pods-ios-sdk-example.release.xcconfig"; sourceTree = "<group>"; };
-		A6FCDBDDEF57A87ED38F0028 /* Pods-ios-sdk-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk-example.debug.xcconfig"; path = "Target Support Files/Pods-ios-sdk-example/Pods-ios-sdk-example.debug.xcconfig"; sourceTree = "<group>"; };
-		F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67C5C4F2A5183A8009BA097 /* ios-sdk-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_sdk_exampleApp.swift; sourceTree = "<group>"; };
 		F67C5C562A5183A8009BA097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +71,6 @@
 		F6D7AC392A97496500ECC123 /* ColorExtensios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensios.swift; sourceTree = "<group>"; };
 		F6D7AC3A2A97496500ECC123 /* LocalizedAlertError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedAlertError.swift; sourceTree = "<group>"; };
 		F6D7AC3B2A97496500ECC123 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		F6D7AC412A97B8C100ECC123 /* NeuosSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NeuosSDK.xcframework; path = "../../neuos-ios-framework/NeuosSDK/NeuosSDK.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,31 +78,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D7AC442A97BB2300ECC123 /* NeuosSDK.xcframework in Frameworks */,
 				F6D7AC132A9282CE00ECC123 /* Collections in Frameworks */,
 				F6D7AC172A9282CE00ECC123 /* OrderedCollections in Frameworks */,
 				F6D7AC152A9282CE00ECC123 /* DequeModule in Frameworks */,
-				DAB3FFFE0C3F3D09D423CD46 /* Pods_ios_sdk_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		58316E7807C551E96EAAEA8F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F6D7AC412A97B8C100ECC123 /* NeuosSDK.xcframework */,
-				F0FA26A352A86E9ABBDF4DE6 /* Pods_ios_sdk_example.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E0AF48595E9D0BBDD35DB3F4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A6FCDBDDEF57A87ED38F0028 /* Pods-ios-sdk-example.debug.xcconfig */,
-				0F2CC011E05E6AFC696C6AE3 /* Pods-ios-sdk-example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -106,7 +100,6 @@
 				F67C5C512A5183A8009BA097 /* ios-sdk-example */,
 				F67C5C502A5183A8009BA097 /* Products */,
 				E0AF48595E9D0BBDD35DB3F4 /* Pods */,
-				58316E7807C551E96EAAEA8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,11 +187,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F67C5C5D2A5183A8009BA097 /* Build configuration list for PBXNativeTarget "ios-sdk-example" */;
 			buildPhases = (
-				3E2EF3BAB445F496DEE57A9B /* [CP] Check Pods Manifest.lock */,
 				F67C5C4B2A5183A8009BA097 /* Sources */,
 				F67C5C4C2A5183A8009BA097 /* Frameworks */,
 				F67C5C4D2A5183A8009BA097 /* Resources */,
-				696AFD177DDA5F5F9369CB55 /* [CP] Embed Pods Frameworks */,
+				F67EC2722BEE7557006DDB7D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,7 +231,7 @@
 			);
 			mainGroup = F67C5C462A5183A8009BA097;
 			packageReferences = (
-				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */,
+				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = F67C5C502A5183A8009BA097 /* Products */;
 			projectDirPath = "";
@@ -261,48 +253,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3E2EF3BAB445F496DEE57A9B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ios-sdk-example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		696AFD177DDA5F5F9369CB55 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ios-sdk-example/Pods-ios-sdk-example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ios-sdk-example/Pods-ios-sdk-example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-sdk-example/Pods-ios-sdk-example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F67C5C4B2A5183A8009BA097 /* Sources */ = {
@@ -453,7 +403,6 @@
 		};
 		F67C5C5E2A5183A8009BA097 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6FCDBDDEF57A87ED38F0028 /* Pods-ios-sdk-example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,7 +434,6 @@
 		};
 		F67C5C5F2A5183A8009BA097 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F2CC011E05E6AFC696C6AE3 /* Pods-ios-sdk-example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -539,7 +487,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */ = {
+		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
@@ -552,17 +500,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F6D7AC122A9282CE00ECC123 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
+			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
 		};
 		F6D7AC142A9282CE00ECC123 /* DequeModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
+			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = DequeModule;
 		};
 		F6D7AC162A9282CE00ECC123 /* OrderedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
+			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
