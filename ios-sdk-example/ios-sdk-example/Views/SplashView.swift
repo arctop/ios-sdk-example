@@ -8,11 +8,11 @@
 import SwiftUI
 import ArctopSDK
 struct SplashView : View {
-    private let lightSplashImage = "stanford_splash"
+    private let lightSplashImage = "splash-image"
     @ObservedObject var viewModel:ViewModel
     @ObservedObject var qaModel:QAViewModel
     @EnvironmentObject var hardwareMonitor: HardwareMonitorModel
-    
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         
             if (!viewModel.clientInit){
@@ -33,7 +33,7 @@ struct SplashView : View {
             else{
                 if (viewModel.userLoggedInStatus){
                         VStack{
-                            Image("stanford_header")
+                            Image("pb_arctop")
                                 .scaledToFill().padding()
                         }
                         Spacer()
@@ -102,7 +102,7 @@ struct SplashView : View {
                 }
                 else{
                     VStack{
-                        Image("stanford_header")
+                        Image("pb_arctop")
                             .scaledToFill().padding()
                     }
                     Spacer()

@@ -17,7 +17,7 @@ struct ios_sdk_exampleApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            SplashView(viewModel: viewModel , qaModel: qaModel).environmentObject(hardwareMonitor)
+            SplashView(viewModel: viewModel , qaModel: qaModel).environmentObject(hardwareMonitor).environment(\.colorScheme, .light)
         }
     }
 }
