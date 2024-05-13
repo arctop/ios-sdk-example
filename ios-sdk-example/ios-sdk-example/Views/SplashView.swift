@@ -41,7 +41,11 @@ struct SplashView : View {
                             
                             switch viewModel.myViewState {
                             case .start:
-                                HomeView(userCalibrationStatus: $viewModel.userCalibrationStatus, onStartPredictions: viewModel.onStartPrediction, onLogoutClick: viewModel.onLogoutClick)
+                                HomeView(userCalibrationStatus: $viewModel.userCalibrationStatus, onStartPredictions: viewModel.onStartPrediction, onLogoutClick:{
+                                    Task{
+                                        await viewModel.logoutUser()
+                                    }
+                                } )
                                     .errorAlert(error: $viewModel.lastError)
                                     .onAppear{
                                         Task{

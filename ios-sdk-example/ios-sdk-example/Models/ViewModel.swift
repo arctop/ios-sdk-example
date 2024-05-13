@@ -173,27 +173,25 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     public func onStartPrediction(){
         myViewState = .pair
     }
-    public func onLogoutClick(){
-        Task{
-            try? await sdk.logoutUser()
-            DispatchQueue.main.async {
-                self.userLoggedInStatus = false
-            }
+    public func logoutUser() async{
+        try? await sdk.logoutUser()
+        DispatchQueue.main.async {
+            self.userLoggedInStatus = false
         }
     }
-    public func login(email:String, password:String) async -> Result<Bool , Error>{
+    public func login() async -> Result<Bool , Error>{
         //showLoadingWithMessage("Logging In...")
-        var result:Result<Bool,Error>
-        do{
-            try await sdk.loginUser()
-            result = .success(true)
+       // var result:Result<Bool,Error>
+        //do{
+            let result = await sdk.loginUser()
+            //result = .success(true)
             DispatchQueue.main.async {
                 self.userLoggedInStatus = true
             }
-        }
-        catch{
-            result = .failure(error)
-        }
+//        }
+//        catch{
+//            result = .failure(error)
+//        }
         //loadingShowing = false
         return result
     }

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F650DC382BF2285700B1F175 /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F650DC372BF2285700B1F175 /* Arctop-SDK */; };
 		F67C5C532A5183A8009BA097 /* ios_sdk_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */; };
 		F67C5C572A5183A8009BA097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C562A5183A8009BA097 /* Assets.xcassets */; };
 		F67C5C5A2A5183A8009BA097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C5C592A5183A8009BA097 /* Preview Assets.xcassets */; };
@@ -80,6 +81,7 @@
 			files = (
 				F6D7AC132A9282CE00ECC123 /* Collections in Frameworks */,
 				F6D7AC172A9282CE00ECC123 /* OrderedCollections in Frameworks */,
+				F650DC382BF2285700B1F175 /* Arctop-SDK in Frameworks */,
 				F6D7AC152A9282CE00ECC123 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,11 +89,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E0AF48595E9D0BBDD35DB3F4 /* Pods */ = {
+		3E3CE1BD9EF36A6E934FC778 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F67C5C462A5183A8009BA097 = {
@@ -99,7 +101,7 @@
 			children = (
 				F67C5C512A5183A8009BA097 /* ios-sdk-example */,
 				F67C5C502A5183A8009BA097 /* Products */,
-				E0AF48595E9D0BBDD35DB3F4 /* Pods */,
+				3E3CE1BD9EF36A6E934FC778 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +203,7 @@
 				F6D7AC122A9282CE00ECC123 /* Collections */,
 				F6D7AC142A9282CE00ECC123 /* DequeModule */,
 				F6D7AC162A9282CE00ECC123 /* OrderedCollections */,
+				F650DC372BF2285700B1F175 /* Arctop-SDK */,
 			);
 			productName = "ios-sdk-example";
 			productReference = F67C5C4F2A5183A8009BA097 /* ios-sdk-example.app */;
@@ -232,6 +235,7 @@
 			mainGroup = F67C5C462A5183A8009BA097;
 			packageReferences = (
 				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				F650DC362BF2285700B1F175 /* XCLocalSwiftPackageReference "../../arctop-sdk-swift-package" */,
 			);
 			productRefGroup = F67C5C502A5183A8009BA097 /* Products */;
 			projectDirPath = "";
@@ -411,6 +415,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ios-sdk-example/Preview Content\"";
 				DEVELOPMENT_TEAM = K37XRPRVK6;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "TECI Save";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth permission required";
@@ -442,6 +450,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ios-sdk-example/Preview Content\"";
 				DEVELOPMENT_TEAM = K37XRPRVK6;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "TECI Save";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth permission required";
@@ -486,6 +498,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		F650DC362BF2285700B1F175 /* XCLocalSwiftPackageReference "../../arctop-sdk-swift-package" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../arctop-sdk-swift-package";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -498,6 +517,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F650DC372BF2285700B1F175 /* Arctop-SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Arctop-SDK";
+		};
 		F6D7AC122A9282CE00ECC123 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
