@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -241,7 +241,7 @@
 			mainGroup = F67C5C462A5183A8009BA097;
 			packageReferences = (
 				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */,
-				F620F3C72BF515130091E3FE /* XCLocalSwiftPackageReference "../../arctop-ios-sdk" */,
+				F620F3CA2BF567140091E3FE /* XCRemoteSwiftPackageReference "ios-sdk" */,
 			);
 			productRefGroup = F67C5C502A5183A8009BA097 /* Products */;
 			projectDirPath = "";
@@ -504,14 +504,15 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		F620F3C72BF515130091E3FE /* XCLocalSwiftPackageReference "../../arctop-ios-sdk" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../arctop-ios-sdk";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
+		F620F3CA2BF567140091E3FE /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arctop/ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
