@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F620F3C92BF515130091E3FE /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F620F3C82BF515130091E3FE /* Arctop-SDK */; };
+		F63DAD252BF60D8B009E32CB /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD242BF60D8B009E32CB /* Arctop-SDK */; };
+		F63DAD2B2BF6A790009E32CB /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD2A2BF6A790009E32CB /* Arctop-SDK */; };
+		F63DAD2E2BF6A831009E32CB /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD2D2BF6A831009E32CB /* Collections */; };
+		F63DAD302BF6A831009E32CB /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD2F2BF6A831009E32CB /* DequeModule */; };
+		F63DAD322BF6A831009E32CB /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD312BF6A831009E32CB /* OrderedCollections */; };
 		F650DC382BF2285700B1F175 /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F650DC372BF2285700B1F175 /* Arctop-SDK */; };
 		F66EBBBC2BF49BE80001592D /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F66EBBBB2BF49BE80001592D /* Arctop-SDK */; };
 		F67C5C532A5183A8009BA097 /* ios_sdk_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */; };
@@ -18,9 +23,6 @@
 		F685E6192A82C0B7009EDC71 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685E6182A82C0B7009EDC71 /* ViewModel.swift */; };
 		F685E61D2A83FCDF009EDC71 /* PairViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685E61C2A83FCDF009EDC71 /* PairViewModel.swift */; };
 		F68F4B9B2A89198D006FA387 /* PairDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F4B9A2A89198D006FA387 /* PairDeviceView.swift */; };
-		F6D7AC132A9282CE00ECC123 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F6D7AC122A9282CE00ECC123 /* Collections */; };
-		F6D7AC152A9282CE00ECC123 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = F6D7AC142A9282CE00ECC123 /* DequeModule */; };
-		F6D7AC172A9282CE00ECC123 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F6D7AC162A9282CE00ECC123 /* OrderedCollections */; };
 		F6D7AC222A96AF6E00ECC123 /* HardwareMonitorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC212A96AF6E00ECC123 /* HardwareMonitorModel.swift */; };
 		F6D7AC242A96AFF300ECC123 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC232A96AFF300ECC123 /* SplashView.swift */; };
 		F6D7AC262A96B62C00ECC123 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7AC252A96B62C00ECC123 /* LoginView.swift */; };
@@ -81,12 +83,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63DAD2E2BF6A831009E32CB /* Collections in Frameworks */,
 				F620F3C92BF515130091E3FE /* Arctop-SDK in Frameworks */,
 				F66EBBBC2BF49BE80001592D /* Arctop-SDK in Frameworks */,
-				F6D7AC132A9282CE00ECC123 /* Collections in Frameworks */,
-				F6D7AC172A9282CE00ECC123 /* OrderedCollections in Frameworks */,
+				F63DAD302BF6A831009E32CB /* DequeModule in Frameworks */,
+				F63DAD2B2BF6A790009E32CB /* Arctop-SDK in Frameworks */,
 				F650DC382BF2285700B1F175 /* Arctop-SDK in Frameworks */,
-				F6D7AC152A9282CE00ECC123 /* DequeModule in Frameworks */,
+				F63DAD322BF6A831009E32CB /* OrderedCollections in Frameworks */,
+				F63DAD252BF60D8B009E32CB /* Arctop-SDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,12 +208,14 @@
 			);
 			name = "ios-sdk-example";
 			packageProductDependencies = (
-				F6D7AC122A9282CE00ECC123 /* Collections */,
-				F6D7AC142A9282CE00ECC123 /* DequeModule */,
-				F6D7AC162A9282CE00ECC123 /* OrderedCollections */,
 				F650DC372BF2285700B1F175 /* Arctop-SDK */,
 				F66EBBBB2BF49BE80001592D /* Arctop-SDK */,
 				F620F3C82BF515130091E3FE /* Arctop-SDK */,
+				F63DAD242BF60D8B009E32CB /* Arctop-SDK */,
+				F63DAD2A2BF6A790009E32CB /* Arctop-SDK */,
+				F63DAD2D2BF6A831009E32CB /* Collections */,
+				F63DAD2F2BF6A831009E32CB /* DequeModule */,
+				F63DAD312BF6A831009E32CB /* OrderedCollections */,
 			);
 			productName = "ios-sdk-example";
 			productReference = F67C5C4F2A5183A8009BA097 /* ios-sdk-example.app */;
@@ -240,8 +246,8 @@
 			);
 			mainGroup = F67C5C462A5183A8009BA097;
 			packageReferences = (
-				F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */,
-				F620F3CA2BF567140091E3FE /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				F63DAD292BF6A790009E32CB /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				F63DAD2C2BF6A831009E32CB /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = F67C5C502A5183A8009BA097 /* Products */;
 			projectDirPath = "";
@@ -505,20 +511,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F620F3CA2BF567140091E3FE /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+		F63DAD292BF6A790009E32CB /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/arctop/ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				minimumVersion = 0.0.3;
 			};
 		};
-		F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+		F63DAD2C2BF6A831009E32CB /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -528,6 +534,30 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = "Arctop-SDK";
 		};
+		F63DAD242BF60D8B009E32CB /* Arctop-SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Arctop-SDK";
+		};
+		F63DAD2A2BF6A790009E32CB /* Arctop-SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63DAD292BF6A790009E32CB /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = "Arctop-SDK";
+		};
+		F63DAD2D2BF6A831009E32CB /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63DAD2C2BF6A831009E32CB /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		F63DAD2F2BF6A831009E32CB /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63DAD2C2BF6A831009E32CB /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		F63DAD312BF6A831009E32CB /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63DAD2C2BF6A831009E32CB /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
 		F650DC372BF2285700B1F175 /* Arctop-SDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "Arctop-SDK";
@@ -535,21 +565,6 @@
 		F66EBBBB2BF49BE80001592D /* Arctop-SDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "Arctop-SDK";
-		};
-		F6D7AC122A9282CE00ECC123 /* Collections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = Collections;
-		};
-		F6D7AC142A9282CE00ECC123 /* DequeModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = DequeModule;
-		};
-		F6D7AC162A9282CE00ECC123 /* OrderedCollections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6D7AC112A9282CE00ECC123 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
