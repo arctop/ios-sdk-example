@@ -37,12 +37,9 @@ struct PredictionView: View {
             if (progressShowing){
                VStack{
                      Spacer()
-                     SessionUploadView(currentStatus: $viewModel.currentUploadStatus, uploadProgress: $viewModel.uploadProgress,
-                                       showRetryUpload: $showRetryUpload, retryUpload: retryUpload, skipRetry: skipRetry)
+                     SessionUploadView()
                      Spacer()
                  }.animation(.default, value: progressShowing)
-                 
-                 
             }
             else{
                 Text("\(viewModel.currentTime)").font(.title2)
@@ -118,22 +115,12 @@ struct PredictionView: View {
         let result = await viewModel.sdk.finishSession()
         switch result {
         case .success(_):
-            progressShowing = false
             viewModel.myViewState = .summery
         case .failure(let error):
             print(error)
             viewModel.lastError = LocalizedAlertError(error , title: "Uploading Session Failed")
-            //showRetryUpload = true
+            viewModel.myViewState = .summery
         }
-    }
-    private func skipRetry(){
         progressShowing = false
-        showRetryUpload = false
-//        viewModel.userDismissedUploadFailed()
-    }
-    private func retryUpload(){
-        Task{
-            await tryUploadSession()
-        }
     }
 }

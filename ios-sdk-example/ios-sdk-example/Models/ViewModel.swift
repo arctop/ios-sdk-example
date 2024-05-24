@@ -12,7 +12,7 @@ import SwiftUI
 enum myViewState : String{
     case start = "Start" , pair = "Pair" , qa = "QA" , prediction = "Prediction", summery = "Summery"
 }
-class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener , ArctopSDKSessionUploadListener{
+class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener{
     public let sdk = ArctopSDKClient()
     @Published public var clientInit = false
     @Published public var realtimeQaValue: (Bool , QAFailureType) = (true, .passed)
@@ -25,8 +25,6 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     @Published var loadingShowing = false
     @Published var loadingMessage: String = "Loading..."
     @Published var currentTime:String = ""
-    @Published public var currentUploadStatus:UploadStatus = .starting
-    @Published public var uploadProgress:Float = 0
     private let dateFormatter = DateFormatter()
     public private(set) var noSignalColor:Color = Color(hex:0xff0411)
     public private(set) var goodSignalColor:Color = Color(hex:0x6fe100)
@@ -63,24 +61,6 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     func onQAStatus(passed: Bool, type: ArctopSDK.QAFailureType) {
         DispatchQueue.main.async {
             self.realtimeQaValue = (passed , type)
-        }
-    }
-    
-    func onUploadStatus(status: ArctopSDK.UploadStatus) {
-        DispatchQueue.main.async {
-            self.currentUploadStatus = status
-            if (status == .starting){
-                self.uploadProgress = 0
-            }
-            else if (status == .failed){
-                self.lastError = LocalizedAlertError(StringError("Unknown error") , title: "Uploading Session Failed")
-            }
-        }
-    }
-    
-    func onUploadProgress(current: Int, total: Int) {
-        DispatchQueue.main.async {
-            self.uploadProgress = (Float(current) / Float(total)) * 100
         }
     }
     
