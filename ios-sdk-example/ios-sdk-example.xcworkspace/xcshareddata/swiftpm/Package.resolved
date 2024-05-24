@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/arctop/ios-sdk",
       "state" : {
-        "revision" : "7e6d45be93d7794db7b6f7fc3199c87c7ea31ca3",
-        "version" : "0.0.3"
+        "branch" : "debug/dev",
+        "revision" : "ce566f517414255fa2e23aa12e0ed8db755f8a70"
       }
     },
     {

@@ -515,8 +515,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/arctop/ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				branch = debug/dev;
+				kind = branch;
 			};
 		};
 		F63DAD2C2BF6A831009E32CB /* XCRemoteSwiftPackageReference "swift-collections" */ = {
