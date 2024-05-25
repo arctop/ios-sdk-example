@@ -182,7 +182,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         qaModel!.stop()
         runClock()
         Task{
-            let result = await sdk.startPredictionSession("zone")
+            let result = await sdk.startPredictionSession(ArctopSDKPredictions.FLOW)
             switch result{
                 case .success(_):
                 DispatchQueue.main.async {

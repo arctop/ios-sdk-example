@@ -1,15 +1,6 @@
 {
-  "originHash" : "60494b5296e4ff0c9e7192063fc3fd51343f511a93fa3d725b96d5e92398e14a",
+  "originHash" : "51f90653b2c9f9f7064c0d52159b40bf7d222e5f314be23e62fe28520fec03db",
   "pins" : [
-    {
-      "identity" : "ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/arctop/ios-sdk",
-      "state" : {
-        "branch" : "debug/dev",
-        "revision" : "ce566f517414255fa2e23aa12e0ed8db755f8a70"
-      }
-    },
     {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
