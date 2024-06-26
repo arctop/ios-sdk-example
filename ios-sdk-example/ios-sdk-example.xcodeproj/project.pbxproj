@@ -514,8 +514,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/arctop/ios-sdk-private.git";
 			requirement = {
-				branch = devel;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

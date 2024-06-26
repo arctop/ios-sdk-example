@@ -1,13 +1,13 @@
 {
-  "originHash" : "bba9876db975530a9f0817cdcb6128f7bf56dae3f44d385c2338bee160176f24",
+  "originHash" : "8af9b99690761112766a5272e98dc33b0e818ee1b638d39e9c5892aac7b79fd3",
   "pins" : [
     {
       "identity" : "ios-sdk-private",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/arctop/ios-sdk-private.git",
       "state" : {
-        "branch" : "devel",
-        "revision" : "98216059be4245d1bf0e2902130b9c506ad96837"
+        "revision" : "02b8782ee56a46589dd70c63fe8a2221e8f63164",
+        "version" : "0.0.4"
       }
     },
     {
