@@ -34,7 +34,7 @@ class PairViewModel : NSObject, ObservableObject , ArctopSDKListener{
         
     }
     
-    func onDeviceListUpdated(museDeviceList: [String]) {
+    func onDeviceListUpdated(headwareDeviceList museDeviceList: [String]) {
         DispatchQueue.main.async {
             self.museList = museDeviceList
         }

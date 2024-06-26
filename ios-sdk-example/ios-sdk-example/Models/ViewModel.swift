@@ -68,7 +68,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         self.lastError = LocalizedAlertError(errorCode , title: "message")
     }
     
-    func onDeviceListUpdated(museDeviceList: [String]) {
+    func onDeviceListUpdated(headwareDeviceList museDeviceList: [String]) {
         DispatchQueue.main.async {
             self.museList = museDeviceList
         }
