@@ -1,13 +1,13 @@
 {
-  "originHash" : "8af9b99690761112766a5272e98dc33b0e818ee1b638d39e9c5892aac7b79fd3",
+  "originHash" : "9c3e38c2126c4bd644767326aa2efc773be59dee7dcb13c0c6ca903e67a2c2d0",
   "pins" : [
     {
-      "identity" : "ios-sdk-private",
+      "identity" : "ios-private-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/arctop/ios-sdk-private.git",
+      "location" : "https://gitlab.com/arctop/engineering/neuos/sdk/ios-private-sdk.git",
       "state" : {
-        "revision" : "02b8782ee56a46589dd70c63fe8a2221e8f63164",
-        "version" : "0.0.4"
+        "revision" : "7e6d45be93d7794db7b6f7fc3199c87c7ea31ca3",
+        "version" : "0.0.3"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections.git",
       "state" : {
-        "revision" : "94cf62b3ba8d4bed62680a282d4c25f9c63c2efb",
-        "version" : "1.1.0"
+        "revision" : "ee97538f5b81ae89698fd95938896dec5217b148",
+        "version" : "1.1.1"
       }
     }
   ],
