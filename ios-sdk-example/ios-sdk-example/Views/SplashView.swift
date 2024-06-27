@@ -16,22 +16,32 @@ struct SplashView : View {
     var body: some View {
         
             if (!viewModel.clientInit){
+                VStack{
                     VStack(alignment: .center,spacing: 10){
                         Spacer()
                         Image(lightSplashImage)
                             .scaledToFill()
-                        .onAppear{
-                            Task{
-                                await viewModel.initClient()
-                                viewModel.qaModel = qaModel
-                                await viewModel.checkUserLoggedInStatus()
-                            }
-                        }
+                            .onAppear{
+                                Task{
+                                    await viewModel.initClient()
+                                    viewModel.qaModel = qaModel
+                                    await viewModel.checkUserLoggedInStatus()
+                                }
+                            }.padding(.bottom , 50)
+                        ProgressView().scaleEffect(3)
                         Spacer()
                     }
+                }.frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .center
+                  ).background(.white)
             }
             else{
                 if (viewModel.userLoggedInStatus){
+                    VStack{
                         VStack{
                             Image("pb_arctop")
                                 .scaledToFill().padding()
@@ -46,12 +56,12 @@ struct SplashView : View {
                                         await viewModel.logoutUser()
                                     }
                                 } )
-                                    .errorAlert(error: $viewModel.lastError)
-                                    .onAppear{
-                                        Task{
-                                            await viewModel.checkUserCalibrationStatus()
-                                        }
+                                .errorAlert(error: $viewModel.lastError)
+                                .onAppear{
+                                    Task{
+                                        await viewModel.checkUserCalibrationStatus()
                                     }
+                                }
                             case .pair:
                                 PairDeviceView(muses: $viewModel.museList, onSelectDevice: viewModel.onSelectDevice).onAppear{
                                     viewModel.scanForDevices()
@@ -61,14 +71,14 @@ struct SplashView : View {
                                 VStack(alignment: .leading){
                                     Text("Signal quality").bold()
                                     LinearGradient(gradient: Gradient(colors: [viewModel.noSignalColor , viewModel.goodSignalColor]),
-                                           startPoint: .leading, endPoint: .trailing)
+                                                   startPoint: .leading, endPoint: .trailing)
                                     .frame(height: 20)
                                     HStack{
                                         Text("No Signal")
                                         Spacer()
                                         Text("Good")
                                     }.padding(.bottom)
-
+                                    
                                     Text("Headband battery").bold().padding(.bottom)
                                     HStack{
                                         let tint:Color = getBatteryTint()
@@ -82,11 +92,11 @@ struct SplashView : View {
                                             Text("Checking...")
                                         }
                                     }
-                                    #if DEBUG
+#if DEBUG
                                     Button("Debug Skip"){
                                         viewModel.onQAPassed()
                                     }.buttonStyle(SquareButtonStyle())
-                                    #endif
+#endif
                                 }
                             case .prediction:
                                 PredictionView(viewModel: viewModel).errorAlert(error: $viewModel.lastError)
@@ -96,19 +106,22 @@ struct SplashView : View {
                                     viewModel.myViewState = .start
                                 }.buttonStyle(SquareButtonStyle()).padding(.top)
                             }
-                        
-                        }.padding()
-                    Spacer()
+                            
+                        }
+                        Spacer()
+                    }.background(.white)
                 }
                 else{
                     VStack{
-                        Image("pb_arctop")
-                            .scaledToFill().padding()
-                    }
-                    Spacer()
+                        VStack{
+                            Image("pb_arctop")
+                                .scaledToFill().padding()
+                        }
+                        Spacer()
                         LoginView(viewModel: viewModel)
                             .errorAlert(error: $viewModel.lastError).padding()
-                    Spacer()
+                        Spacer()
+                    }.background(.white)
                 }
             }
         }

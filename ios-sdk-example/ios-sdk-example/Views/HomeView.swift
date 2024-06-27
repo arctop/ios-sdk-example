@@ -16,21 +16,21 @@ struct HomeView: View {
             Button("Logout Current User"){
                 onLogoutClick()
             }.buttonStyle(SquareButtonStyle()).padding(.bottom)
-            switch (userCalibrationStatus){
-            case .blocked , .unknown:
-                Text("Checking user calibration status...").padding([.vertical])
-            case .needsCalibration:
-                Text("User is not calibrated").padding([.vertical])
-                //TODO: Deep link for calibration
-            case .calibrationDone:
-                Text("Your models are being processed").padding([.vertical])
-            case .modelsAvailable:
-                Button("Begin Recording"){
-                    onStartPredictions()
-                }.buttonStyle(SquareButtonStyle()).padding([.vertical])
-            @unknown default:
-                fatalError()
-            }
+                switch (userCalibrationStatus){
+                case .blocked , .unknown:
+                    Text("Checking user calibration status...").font(.title3).padding([.vertical])
+                case .needsCalibration:
+                    Text("User is not calibrated").font(.title3).padding([.vertical])
+                    //TODO: Deep link for calibration
+                case .calibrationDone:
+                    Text("Your models are being processed").font(.title3).padding([.vertical])
+                case .modelsAvailable:
+                    Button("Begin Recording"){
+                        onStartPredictions()
+                    }.buttonStyle(SquareButtonStyle()).padding([.vertical])
+                @unknown default:
+                    fatalError()
+                }
         }.padding()
     }
 }
