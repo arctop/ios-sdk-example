@@ -120,7 +120,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         
     }
     
-    public func checkUserLoggedInStatus() async{
+    public func checkUserLoggedInStatus() async {
         do{
             let result = try await sdk.isUserLoggedIn()
             DispatchQueue.main.async {
@@ -159,7 +159,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
             self.userLoggedInStatus = false
         }
     }
-    public func login() async -> Result<Bool , Error>{
+    public func login() async -> Result<Void , Error>{
         //showLoadingWithMessage("Logging In...")
        // var result:Result<Bool,Error>
         //do{
