@@ -15,17 +15,16 @@ struct LoginView: View {
         
         LoadingView(isShowing: $viewModel.loadingShowing, loadingMessage: $viewModel.loadingMessage){
             VStack{
-                //TopBarLogo().padding(.bottom , 100.0)
                 Text("Login")
                     .bold()
                     .font(.largeTitle)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom)
-                    .onAppear(){
-                        Task{
-                            await viewModel.login()
-                        }
-                    }
+                Button("Login"){
+                    Task{
+                       await viewModel.login()
+                   }
+                }.buttonStyle(SquareButtonStyle())
             }.padding()
         }
     }

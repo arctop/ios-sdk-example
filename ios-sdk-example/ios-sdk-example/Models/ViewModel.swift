@@ -160,19 +160,18 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         }
     }
     public func login() async -> Result<Void , Error>{
-        //showLoadingWithMessage("Logging In...")
-       // var result:Result<Bool,Error>
-        //do{
-            let result = await sdk.loginUser()
-            //result = .success(true)
-            DispatchQueue.main.async {
-                self.userLoggedInStatus = true
-            }
-//        }
-//        catch{
-//            result = .failure(error)
-//        }
-        //loadingShowing = false
+        let result = await sdk.loginUser()
+        switch (result){
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.userLoggedInStatus = true
+                }
+            case .failure(_):
+                print("Error logging in")
+                DispatchQueue.main.async {
+                    self.userLoggedInStatus = false
+                }
+        }
         return result
     }
     public func scanForDevices(){
