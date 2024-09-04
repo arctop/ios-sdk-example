@@ -145,13 +145,22 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         }
     }
     public func onSelectDevice(deviceID:String){
-        try? sdk.connectSensorDevice(deviceId: deviceID)
+        do
+        {
+            try sdk.connectSensorDevice(deviceId: deviceID)
+        }
+        catch{
+            return
+        }
         myViewState = .qa
         qaModel!.start(quality: .perfect)
     }
     
     public func onStartPrediction(){
-        myViewState = .pair
+        //myViewState = .pair
+        Task{
+            await checkUserCalibrationStatus()
+        }
     }
     public func logoutUser() async{
         try? await sdk.logoutUser()
@@ -181,7 +190,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         qaModel!.stop()
         runClock()
         Task{
-            let result = await sdk.startPredictionSession(ArctopSDKPredictions.FLOW)
+            let result = await sdk.startPredictionSession("zone")
             switch result{
                 case .success(_):
                 DispatchQueue.main.async {
