@@ -157,7 +157,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     }
     
     public func onStartPrediction(){
-        //myViewState = .pair
+        myViewState = .pair
         Task{
             await checkUserCalibrationStatus()
         }

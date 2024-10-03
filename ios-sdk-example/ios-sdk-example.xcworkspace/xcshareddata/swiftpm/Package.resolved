@@ -7,7 +7,7 @@
       "location" : "https://gitlab.com/arctop/engineering/neuos/sdk/ios-private-sdk",
       "state" : {
         "branch" : "devel",
-        "revision" : "4410b8554d912b838e32eb60952a709443b96d75"
+        "revision" : "37e2d1fe6c47ee27885b111b1e87e2febe08f191"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections.git",
       "state" : {
-        "revision" : "3d2dc41a01f9e49d84f0a3925fb858bed64f702d",
-        "version" : "1.1.2"
+        "revision" : "671108c96644956dddcd89dd59c203dcdb36cec7",
+        "version" : "1.1.4"
       }
     }
   ],

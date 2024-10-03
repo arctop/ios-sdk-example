@@ -31,6 +31,10 @@ struct HomeView: View {
             @unknown default:
                 fatalError()
             }
+            Button("TestKeychain"){
+                print("Token:  \(AuthTokenProvider.shared.getToken() ?? "No token")")
+                print("Uid:\(AuthTokenProvider.shared.getUserId())")
+            }.buttonStyle(SquareButtonStyle()).padding(.vertical)
         }.padding()
     }
 }
