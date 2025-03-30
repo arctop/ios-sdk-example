@@ -14,10 +14,10 @@
             filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "initializeArctop(apiKey:bundle:)"
-            landmarkType = "7">
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "ArctopSDKClient"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,10 +78,10 @@
             filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "initializeArctop(apiKey:bundle:)"
-            landmarkType = "7">
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "ArctopSDKClient"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,10 +94,10 @@
             filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "initializeArctop(apiKey:bundle:)"
-            landmarkType = "7">
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "ArctopSDKClient"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,8 +110,8 @@
             filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "initializeArctop(apiKey:bundle:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,9 +126,9 @@
             filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "initializeArctop(apiKey:bundle:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "failApiKey(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,9 +142,57 @@
             filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "initializeArctop(apiKey:bundle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFA90262-2511-4A48-A6B2-C7B00FBFB8EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/ArctopSDK-eqbubsemyivebobbsrurvudfeyny/Build/Intermediates.noindex/aws-sdk-swift.build/Debug-iphoneos/AWSClientRuntime.build/DerivedSources/resource_bundle_accessor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "module"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10A200F1-59F6-46CB-A10C-2D884D5FDBD0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-sdk-example/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "checkUserCalibrationStatus()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85087CCF-00B0-465B-B00D-FF21F5749FD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../neuos-ios-framework/ArctopSDK/ArctopSDKClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "checkUserCalibrationsStatus(predictionsId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

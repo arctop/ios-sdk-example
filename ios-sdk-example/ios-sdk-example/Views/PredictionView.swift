@@ -14,8 +14,7 @@ struct PredictionView: View {
     @State var showingAddMarker = false
     @State var inputText = ""
     @State var addMarkerTimeStamp:Int64 = 0
-    let stanfordMarkers = ["Leave to scrub" , "Return from scrub" , "Eyes open" ,"First Cut" ,"Scope sync" ,"Long conversation" , "GoPro sync" ,
-             "Checkpoint A" , "Stitching" , "Attending off, resident on"]
+    let prefabMarkers = ["I\'m a marker" , "Check me out" , "Click me too!"]
     let focusKey = "focus"
     let enjoymentKey = "enjoyment"
     
@@ -25,7 +24,7 @@ struct PredictionView: View {
             } label: {
                 Text(label)
                     .padding(.horizontal, 8)
-                    .frame(width: 120 , height: 100)
+                    .frame(width: 120 , height: 50)
                     .foregroundColor(.white)
                     .background(.cyan)
                     .cornerRadius(12)
@@ -37,7 +36,8 @@ struct PredictionView: View {
             if (progressShowing){
                VStack{
                      Spacer()
-                     SessionUploadView()
+                   SessionUploadView()
+                       .frame(minWidth: 300, maxWidth: .infinity , minHeight: 400, maxHeight: .infinity)
                      Spacer()
                  }.animation(.default, value: progressShowing)
             }
@@ -75,32 +75,30 @@ struct PredictionView: View {
                 }
                 // insert grid with buttons
                 HStack{
-                    ForEach(0..<3){ i in
-                        markerButton(stanfordMarkers[i])
+                    ForEach(prefabMarkers, id: \.self){ marker in
+                        markerButton(marker)
                     }
                 }
-                HStack{
-                    ForEach(3..<6){ i in
-                        markerButton(stanfordMarkers[i])
+                Divider()
+                Spacer()
+                
+                ScrollView{
+                    VStack(alignment: .leading, spacing: 5){
+                        ForEach(viewModel.realtimePredictionValues.keys, id:\.self){key in
+                            if let item = viewModel.realtimePredictionValues[key]{
+                                Text("\(key) : \(item)")
+                                Divider()
+                            }
+                        }
+                        //passed : Bool , type : QAFailureType
+                        Text("QA Passed: \(viewModel.realtimeQaValue.0)")
+                        Divider()
+                        Text("QA Failure Type: \(viewModel.realtimeQaValue.1)")
+                        Divider()
                     }
+                    .frame(maxWidth: .infinity)
                 }
-                HStack{
-                    ForEach(6..<9){ i in
-                        markerButton(stanfordMarkers[i])
-                    }
-                }
-                HStack{
-                    Spacer().frame(width: 120, height: 100, alignment: .center)
-                    
-                    markerButton(stanfordMarkers[9])
-                    Spacer().frame(width: 120, height: 100, alignment: .center)
-                    
-                }
-                HStack{
-                    Text("Focus | \(Int(viewModel.realtimePredictionValues["focus"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
-                    Text("Heartrate | \(Int(viewModel.realtimePredictionValues["heart_rate"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
-                    Text("Enjoyment | \(Int(viewModel.realtimePredictionValues["enjoyment"] ?? -1))").frame(width: 120, height: 100, alignment: .center)
-                }
+                .frame(minHeight: 200, maxHeight: 400)
                 Spacer()
                 Button("Stop Recording"){
                     Task{

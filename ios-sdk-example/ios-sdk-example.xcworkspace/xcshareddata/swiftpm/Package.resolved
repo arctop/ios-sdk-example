@@ -1,15 +1,6 @@
 {
-  "originHash" : "9c3e38c2126c4bd644767326aa2efc773be59dee7dcb13c0c6ca903e67a2c2d0",
+  "originHash" : "51f90653b2c9f9f7064c0d52159b40bf7d222e5f314be23e62fe28520fec03db",
   "pins" : [
-    {
-      "identity" : "ios-private-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://gitlab.com/arctop/engineering/neuos/sdk/ios-private-sdk",
-      "state" : {
-        "branch" : "devel",
-        "revision" : "37e2d1fe6c47ee27885b111b1e87e2febe08f191"
-      }
-    },
     {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",

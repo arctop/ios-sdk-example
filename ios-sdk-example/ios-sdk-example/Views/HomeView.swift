@@ -8,7 +8,7 @@
 import SwiftUI
 import ArctopSDK
 struct HomeView: View {
-    @Binding var userCalibrationStatus:UserCalibrationStatus
+    @Binding var userPredictions:[PredictionDataModel]
     var onStartPredictions: () -> Void
     var onLogoutClick: () -> Void
     var body: some View {
@@ -16,26 +16,39 @@ struct HomeView: View {
             Button("Logout Current User"){
                 onLogoutClick()
             }.buttonStyle(SquareButtonStyle()).padding(.bottom)
-            switch (userCalibrationStatus){
-            case .blocked , .unknown:
-                Text("Checking user calibration status...").font(.title3).padding([.vertical])
-            case .needsCalibration:
-                Text("User is not calibrated").font(.title3).padding([.vertical])
-                //TODO: Deep link for calibration
-            case .calibrationDone:
-                Text("Your models are being processed").font(.title3).padding([.vertical])
-            case .modelsAvailable:
+            ForEach(userPredictions.indices) { item in
+                HStack{
+                    Text(userPredictions[item].PredictionName)
+                    Text(getCalibrationStatusDescription(userPredictions[item].CalibrationStatus))
+                    Toggle("", isOn: $userPredictions[item].isSelected).disabled(userPredictions[item].CalibrationStatus != .modelsAvailable)
+                }.padding(.horizontal)
+            }
+            Spacer()
+            if (userPredictions.contains{ item in item.CalibrationStatus == .modelsAvailable }){
                 Button("Begin Recording"){
                     onStartPredictions()
-                }.buttonStyle(SquareButtonStyle()).padding([.vertical])
-            @unknown default:
-                fatalError()
+                }
+                .disabled(!userPredictions.contains(where: { PredictionDataModel in
+                    PredictionDataModel.isSelected
+                }))
+                .buttonStyle(SquareButtonStyle()).padding([.vertical])
             }
-            Button("TestKeychain"){
-                print("Token:  \(AuthTokenProvider.shared.getToken() ?? "No token")")
-                print("Uid:\(AuthTokenProvider.shared.getUserId())")
-            }.buttonStyle(SquareButtonStyle()).padding(.vertical)
+            Spacer()
+           
         }.padding()
+    }
+    private func getCalibrationStatusDescription(_ status: UserCalibrationStatus) -> String {
+        switch status {
+            case .needsCalibration: return "Needs calibration"
+            case .blocked: return "Blocked"
+            case .lockedByOthers : return "Locked by others"
+            case .calibrationDone: return "Calibration done"
+            case .modelsAvailable: return "Models available"
+            case .unknown:
+                return "Unknown"
+            @unknown default:
+                return "Unknown"
+        }
     }
 }
 

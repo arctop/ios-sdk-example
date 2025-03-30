@@ -9,22 +9,38 @@ import Foundation
 import OrderedCollections
 import ArctopSDK
 import SwiftUI
+struct PredictionDataModel{
+    public let PredictionId:String
+    public let PredictionName:String
+    public let CalibrationStatus:UserCalibrationStatus
+    public let iconKey:String
+    public var isSelected:Bool = false
+     init(data : ArctopPredictionData) {
+        self.PredictionId = data.PredictionId
+        self.CalibrationStatus = data.CalibrationStatus
+        self.PredictionName = data.PredictionName
+        self.iconKey = data.iconKey
+        self.isSelected = false
+    }
+}
 enum myViewState : String{
     case start = "Start" , pair = "Pair" , qa = "QA" , prediction = "Prediction", summery = "Summery"
 }
-class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener{
+class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener, @unchecked Sendable{
     public let sdk = ArctopSDKClient()
     @Published public var clientInit = false
     @Published public var realtimeQaValue: (Bool , QAFailureType) = (true, .passed)
     @Published public var realtimePredictionValues: OrderedDictionary<String, Float> = [:]
     @Published public var realtimeMotionData: OrderedDictionary<String , [Float]> = [:]
     @Published var userLoggedInStatus:Bool = false
-    @Published var userCalibrationStatus: UserCalibrationStatus = .unknown
+    //@Published var userCalibrationStatus: UserCalibrationStatus = .unknown
     @Published var museList:[String] = []
     @Published public var lastError:LocalizedAlertError? = nil
     @Published var loadingShowing = false
     @Published var loadingMessage: String = "Loading..."
     @Published var currentTime:String = ""
+    @Published public private(set) var clientAllowedPredictions:[String] = []
+    @Published public var userPredictions: [PredictionDataModel] = []
     private let dateFormatter = DateFormatter()
     public private(set) var noSignalColor:Color = Color(hex:0xff0411)
     public private(set) var goodSignalColor:Color = Color(hex:0x6fe100)
@@ -113,6 +129,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         case .success(_):
             DispatchQueue.main.async {
                 self.clientInit = true
+                self.clientAllowedPredictions = self.sdk.clientAllowedPredictions
             }
         case .failure(let error):
             print(error)
@@ -124,7 +141,11 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         do{
             let result = try await sdk.isUserLoggedIn()
             DispatchQueue.main.async {
+                if (result){
+                    self.checkUserCalibrationStatus()
+                }
                 self.userLoggedInStatus = result
+                
             }
         }
         catch{
@@ -133,17 +154,12 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         
     }
     
-    public func checkUserCalibrationStatus() async{
-        let result = await sdk.checkUserCalibrationStatus()
-        switch (result){
-            case .success(let value):
-            DispatchQueue.main.async {
-                self.userCalibrationStatus = value
-            }
-            case .failure(_):
-                print("Error getting calibration status")
-        }
+    private func checkUserCalibrationStatus() {
+        self.userPredictions = sdk.checkUserCalibrationsStatus(predictionsId: clientAllowedPredictions).map({ data in
+            PredictionDataModel(data: data)
+        })
     }
+    
     public func onSelectDevice(deviceID:String){
         do
         {
@@ -158,9 +174,6 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     
     public func onStartPrediction(){
         myViewState = .pair
-        Task{
-            await checkUserCalibrationStatus()
-        }
     }
     public func logoutUser() async{
         try? await sdk.logoutUser()
@@ -173,6 +186,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         switch (result){
             case .success(_):
                 DispatchQueue.main.async {
+                    self.checkUserCalibrationStatus()
                     self.userLoggedInStatus = true
                 }
             case .failure(_):
@@ -190,7 +204,11 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         qaModel!.stop()
         runClock()
         Task{
-            let result = await sdk.startPredictionSession("zone")
+            let names = userPredictions.filter{
+                item in item.isSelected
+            }.map{ pred in pred.PredictionName }
+            print(names)
+            let result = await sdk.startMultiPredictionSession(names)
             switch result{
                 case .success(_):
                 DispatchQueue.main.async {

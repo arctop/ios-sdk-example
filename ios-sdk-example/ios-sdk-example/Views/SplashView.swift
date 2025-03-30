@@ -51,17 +51,14 @@ struct SplashView : View {
                             
                             switch viewModel.myViewState {
                             case .start:
-                                HomeView(userCalibrationStatus: $viewModel.userCalibrationStatus, onStartPredictions: viewModel.onStartPrediction, onLogoutClick:{
-                                    Task{
-                                        await viewModel.logoutUser()
-                                    }
-                                } )
+                                    HomeView(userPredictions: $viewModel.userPredictions,
+                                             onStartPredictions: viewModel.onStartPrediction,
+                                             onLogoutClick:{
+                                            Task{
+                                                await viewModel.logoutUser()
+                                            }
+                                        } )
                                 .errorAlert(error: $viewModel.lastError)
-                                .onAppear{
-                                    Task{
-                                        await viewModel.checkUserCalibrationStatus()
-                                    }
-                                }
                             case .pair:
                                 PairDeviceView(muses: $viewModel.museList, onSelectDevice: viewModel.onSelectDevice).onAppear{
                                     viewModel.scanForDevices()
@@ -109,7 +106,10 @@ struct SplashView : View {
                             
                         }
                         Spacer()
-                    }.background(.white)
+                    }
+                    .padding()
+                    .background(.white)
+                       
                 }
                 else{
                     VStack{
@@ -121,7 +121,9 @@ struct SplashView : View {
                         LoginView(viewModel: viewModel)
                             .errorAlert(error: $viewModel.lastError).padding()
                         Spacer()
-                    }.background(.white)
+                    }
+                    .padding()
+                    .background(.white)
                 }
             }
         }
