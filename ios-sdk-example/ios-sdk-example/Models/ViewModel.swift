@@ -155,7 +155,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     }
     
     private func checkUserCalibrationStatus() {
-        self.userPredictions = sdk.checkUserCalibrationsStatus(predictionsId: clientAllowedPredictions).map({ data in
+        self.userPredictions = sdk.checkUserCalibrationsStatus(predictionsIds: clientAllowedPredictions).map({ data in
             PredictionDataModel(data: data)
         })
     }
