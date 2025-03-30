@@ -204,11 +204,10 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         qaModel!.stop()
         runClock()
         Task{
-            let names = userPredictions.filter{
+            let ids = userPredictions.filter{
                 item in item.isSelected
-            }.map{ pred in pred.PredictionName }
-            print(names)
-            let result = await sdk.startMultiPredictionSession(names)
+            }.map{ pred in pred.PredictionId }
+            let result = await sdk.startMultiPredictionSession(ids)
             switch result{
                 case .success(_):
                 DispatchQueue.main.async {
