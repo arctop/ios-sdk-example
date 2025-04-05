@@ -12,6 +12,7 @@ import SwiftUI
 struct PredictionDataModel{
     public let PredictionId:String
     public let PredictionName:String
+    public let PredictionTitle:String
     public let CalibrationStatus:UserCalibrationStatus
     public let iconKey:String
     public var isSelected:Bool = false
@@ -19,6 +20,7 @@ struct PredictionDataModel{
         self.PredictionId = data.PredictionId
         self.CalibrationStatus = data.CalibrationStatus
         self.PredictionName = data.PredictionName
+        self.PredictionTitle = data.PredictionTitle
         self.iconKey = data.iconKey
         self.isSelected = false
     }

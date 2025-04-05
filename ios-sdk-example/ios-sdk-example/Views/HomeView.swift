@@ -18,7 +18,7 @@ struct HomeView: View {
             }.buttonStyle(SquareButtonStyle()).padding(.bottom)
             ForEach(userPredictions.indices) { item in
                 HStack{
-                    Text(userPredictions[item].PredictionName)
+                    Text(userPredictions[item].PredictionTitle)
                     Text(getCalibrationStatusDescription(userPredictions[item].CalibrationStatus))
                     Toggle("", isOn: $userPredictions[item].isSelected).disabled(userPredictions[item].CalibrationStatus != .modelsAvailable)
                 }.padding(.horizontal)
