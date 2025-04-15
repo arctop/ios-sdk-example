@@ -35,7 +35,6 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     @Published public var realtimePredictionValues: OrderedDictionary<String, Float> = [:]
     @Published public var realtimeMotionData: OrderedDictionary<String , [Float]> = [:]
     @Published var userLoggedInStatus:Bool = false
-    //@Published var userCalibrationStatus: UserCalibrationStatus = .unknown
     @Published var museList:[String] = []
     @Published public var lastError:LocalizedAlertError? = nil
     @Published var loadingShowing = false
