@@ -15,13 +15,15 @@ struct PredictionDataModel{
     public let PredictionTitle:String
     public let CalibrationStatus:UserCalibrationStatus
     public let iconKey:String
+    public let PredictionPermission:Bool
     public var isSelected:Bool = false
      init(data : ArctopPredictionData) {
-        self.PredictionId = data.PredictionId
-        self.CalibrationStatus = data.CalibrationStatus
-        self.PredictionName = data.PredictionName
-        self.PredictionTitle = data.PredictionTitle
+        self.PredictionId = data.predictionId
+        self.CalibrationStatus = data.calibrationStatus
+        self.PredictionName = data.predictionName
+        self.PredictionTitle = data.predictionTitle
         self.iconKey = data.iconKey
+        self.PredictionPermission = data.predictionPermissionStatus
         self.isSelected = false
     }
 }
@@ -143,7 +145,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
             let result = try await sdk.isUserLoggedIn()
             DispatchQueue.main.async {
                 if (result){
-                    self.checkUserCalibrationStatus()
+                    self.loadUserData()
                 }
                 self.userLoggedInStatus = result
                 
@@ -155,8 +157,9 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         
     }
     
-    private func checkUserCalibrationStatus() {
-        self.userPredictions = sdk.checkUserCalibrationsStatus(predictionsIds: clientAllowedPredictions).map({ data in
+    public func loadUserData() {
+        
+        self.userPredictions = sdk.userPredictionsData.map({ data in
             PredictionDataModel(data: data)
         })
     }
@@ -187,7 +190,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         switch (result){
             case .success(_):
                 DispatchQueue.main.async {
-                    self.checkUserCalibrationStatus()
+                    self.loadUserData()
                     self.userLoggedInStatus = true
                 }
             case .failure(_):

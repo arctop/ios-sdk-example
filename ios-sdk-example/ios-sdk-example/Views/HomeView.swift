@@ -11,15 +11,28 @@ struct HomeView: View {
     @Binding var userPredictions:[PredictionDataModel]
     var onStartPredictions: () -> Void
     var onLogoutClick: () -> Void
+    var onPermissionRequest: () -> Void
+    var onRevokeRequest: () -> Void
+    var onRandomRequest: () -> Void
     var body: some View {
         VStack{
             Button("Logout Current User"){
                 onLogoutClick()
             }.buttonStyle(SquareButtonStyle()).padding(.bottom)
+            Button("Request Permissions"){
+                onPermissionRequest()
+            }.buttonStyle(SquareButtonStyle()).padding(.bottom)
+            Button("Revoke Permissions"){
+                onRevokeRequest()
+            }.buttonStyle(SquareButtonStyle()).padding(.bottom)
+            Button("Random Permissions"){
+                onRandomRequest()
+            }.buttonStyle(SquareButtonStyle()).padding(.bottom)
             ForEach(userPredictions.indices) { item in
                 HStack{
                     Text(userPredictions[item].PredictionTitle)
                     Text(getCalibrationStatusDescription(userPredictions[item].CalibrationStatus))
+                    Image(systemName: userPredictions[item].PredictionPermission ? "checkmark.seal" : "exclamationmark.triangle")
                     Toggle("", isOn: $userPredictions[item].isSelected).disabled(userPredictions[item].CalibrationStatus != .modelsAvailable)
                 }.padding(.horizontal)
             }
@@ -34,6 +47,8 @@ struct HomeView: View {
                 .buttonStyle(SquareButtonStyle()).padding([.vertical])
             }
             Spacer()
+           
+            
            
         }.padding()
     }

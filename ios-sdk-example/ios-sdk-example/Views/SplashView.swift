@@ -56,8 +56,25 @@ struct SplashView : View {
                                              onLogoutClick:{
                                             Task{
                                                 await viewModel.logoutUser()
-                                            }
-                                        } )
+                                                }
+                                            },
+                                             onPermissionRequest: {
+                                                    try? viewModel.sdk.requestPermissions(onComplete: {
+                                                        value in print(value)
+                                                        viewModel.loadUserData()
+                                                    })
+                                            },
+                                             onRevokeRequest: {
+                                        Task{
+                                            try? await viewModel.sdk.revokePermissions()
+                                        }
+                                            },
+                                             onRandomRequest: {
+                                        Task{
+                                            try? await viewModel.sdk.revokeRandomPermissions()
+                                        }
+                                    }
+                                    )
                                 .errorAlert(error: $viewModel.lastError)
                             case .pair:
                                 PairDeviceView(muses: $viewModel.museList, onSelectDevice: viewModel.onSelectDevice).onAppear{
