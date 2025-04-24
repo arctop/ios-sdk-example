@@ -9,7 +9,9 @@ import Foundation
 import OrderedCollections
 import ArctopSDK
 import SwiftUI
-struct PredictionDataModel{
+struct PredictionDataModel : Identifiable{
+    var id: String
+    
     public let PredictionId:String
     public let PredictionName:String
     public let PredictionTitle:String
@@ -25,6 +27,7 @@ struct PredictionDataModel{
         self.iconKey = data.iconKey
         self.PredictionPermission = data.predictionPermissionStatus
         self.isSelected = false
+         self.id = PredictionId
     }
 }
 enum myViewState : String{
@@ -157,11 +160,29 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         
     }
     
+    public func updateUserPredictions(_ predictions: [PredictionDataModel]) {
+        self.userPredictions = predictions
+    }
+    
     public func loadUserData() {
-        
-        self.userPredictions = sdk.userPredictionsData.map({ data in
+        var newData = sdk.userPredictionsData.map({ data in
             PredictionDataModel(data: data)
         })
+       
+        // need to restore the isSelected value here.
+        for i in 0..<newData.count {
+            if let oldData = userPredictions.first(where: { newItem in
+                newItem.PredictionId == newData[i].PredictionId
+            }){
+                newData[i].isSelected = oldData.isSelected
+            }
+            
+        }
+        
+        DispatchQueue.main.async {
+            self.userPredictions = newData
+        }
+        
     }
     
     public func onSelectDevice(deviceID:String){

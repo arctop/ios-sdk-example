@@ -51,7 +51,7 @@ struct SplashView : View {
                             
                             switch viewModel.myViewState {
                             case .start:
-                                    HomeView(userPredictions: $viewModel.userPredictions,
+                                    HomeView(viewModel: viewModel,
                                              onStartPredictions: viewModel.onStartPrediction,
                                              onLogoutClick:{
                                             Task{
@@ -64,16 +64,18 @@ struct SplashView : View {
                                                         viewModel.loadUserData()
                                                     })
                                             },
-                                             onRevokeRequest: {
-                                        Task{
-                                            try? await viewModel.sdk.revokePermissions()
-                                        }
-                                            },
-                                             onRandomRequest: {
-                                        Task{
-                                            try? await viewModel.sdk.revokeRandomPermissions()
-                                        }
-                                    }
+//                                             onRevokeRequest: {
+//                                        Task{
+//                                            try? await viewModel.sdk.revokePermissions()
+//                                            viewModel.loadUserData()
+//                                        }
+//                                            },
+//                                             onRandomRequest: {
+//                                        Task{
+//                                            try? await viewModel.sdk.revokeRandomPermissions()
+//                                            viewModel.loadUserData()
+//                                        }
+//                                    }
                                     )
                                 .errorAlert(error: $viewModel.lastError)
                             case .pair:

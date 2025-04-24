@@ -11,6 +11,7 @@
 		F63DAD2E2BF6A831009E32CB /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD2D2BF6A831009E32CB /* Collections */; };
 		F63DAD302BF6A831009E32CB /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD2F2BF6A831009E32CB /* DequeModule */; };
 		F63DAD322BF6A831009E32CB /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F63DAD312BF6A831009E32CB /* OrderedCollections */; };
+		F654644C2DBA6C5700F69A87 /* CheckToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654644B2DBA6C5700F69A87 /* CheckToggleStyle.swift */; };
 		F65578712C87BC530064D397 /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F65578702C87BC530064D397 /* Arctop-SDK */; };
 		F67623F82DB2B98C00AEBBA5 /* Arctop-SDK in Frameworks */ = {isa = PBXBuildFile; productRef = F67623F72DB2B98C00AEBBA5 /* Arctop-SDK */; };
 		F67C5C532A5183A8009BA097 /* ios_sdk_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F654644B2DBA6C5700F69A87 /* CheckToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckToggleStyle.swift; sourceTree = "<group>"; };
 		F67C5C4F2A5183A8009BA097 /* ios-sdk-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67C5C522A5183A8009BA097 /* ios_sdk_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_sdk_exampleApp.swift; sourceTree = "<group>"; };
 		F67C5C562A5183A8009BA097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		F6D7AC272A96B83C00ECC123 /* UI Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F654644B2DBA6C5700F69A87 /* CheckToggleStyle.swift */,
 				F6D7AC302A9748D900ECC123 /* LoadingIndicator.swift */,
 				F6D7AC2E2A9748D900ECC123 /* LoadingView.swift */,
 				F6D7AC2F2A9748D900ECC123 /* ModalErrorView.swift */,
@@ -286,6 +289,7 @@
 			files = (
 				F6D7AC372A9748D900ECC123 /* LoadingIndicator.swift in Sources */,
 				F6D7AC3E2A97496500ECC123 /* ViewExtensions.swift in Sources */,
+				F654644C2DBA6C5700F69A87 /* CheckToggleStyle.swift in Sources */,
 				F6D7AC3C2A97496500ECC123 /* ColorExtensios.swift in Sources */,
 				F685E6192A82C0B7009EDC71 /* ViewModel.swift in Sources */,
 				F6D7AC332A9748D900ECC123 /* SessionUploadView.swift in Sources */,
@@ -447,6 +451,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,6 +487,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
