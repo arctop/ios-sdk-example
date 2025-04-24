@@ -63,19 +63,7 @@ struct SplashView : View {
                                                         value in print(value)
                                                         viewModel.loadUserData()
                                                     })
-                                            },
-//                                             onRevokeRequest: {
-//                                        Task{
-//                                            try? await viewModel.sdk.revokePermissions()
-//                                            viewModel.loadUserData()
-//                                        }
-//                                            },
-//                                             onRandomRequest: {
-//                                        Task{
-//                                            try? await viewModel.sdk.revokeRandomPermissions()
-//                                            viewModel.loadUserData()
-//                                        }
-//                                    }
+                                            }
                                     )
                                 .errorAlert(error: $viewModel.lastError)
                             case .pair:

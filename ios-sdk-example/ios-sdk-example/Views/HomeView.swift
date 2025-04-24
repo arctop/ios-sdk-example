@@ -14,41 +14,35 @@ struct HomeView: View {
     var onStartPredictions: () -> Void
     var onLogoutClick: () -> Void
     var onPermissionRequest: () -> Void
-//    var onRevokeRequest: () -> Void
-//    var onRandomRequest: () -> Void
     var body: some View {
         VStack{
             Button("Logout Current User"){
                 viewModel.updateUserPredictions(userPredictions)
                 onLogoutClick()
             }.buttonStyle(SquareButtonStyle()).padding(.bottom)
-            HStack{
-                Button("Request Permissions"){
-                    viewModel.updateUserPredictions(userPredictions)
-                    onPermissionRequest()
-                }.buttonStyle(SquareButtonStyle()).padding(.bottom)
-//                Button("Revoke Permissions"){
-//                    viewModel.updateUserPredictions(userPredictions)
-//                    onRevokeRequest()
-//                }.buttonStyle(SquareButtonStyle()).padding(.bottom)
-//                Button("Random Permissions"){
-//                    viewModel.updateUserPredictions(userPredictions)
-//                    onRandomRequest()
-//                }.buttonStyle(SquareButtonStyle()).padding(.bottom)
-            }
             showAvailablePredictionsView
             Spacer()
-            if (userPredictions.contains{ item in item.CalibrationStatus == .modelsAvailable }){
+            HStack{
                 Button("Begin Recording"){
                     viewModel.updateUserPredictions(userPredictions)
                     onStartPredictions()
                 }
-                .disabled(!userPredictions.contains(where: { PredictionDataModel in
-                    PredictionDataModel.isSelected
-                }))
-                .buttonStyle(SquareButtonStyle()).padding([.vertical])
+                .disabled(
+                    !userPredictions.contains{ item in item.CalibrationStatus == .modelsAvailable && item.PredictionPermission && item.isSelected}
+                )
+                .buttonStyle(SquareButtonStyle())
+                Button(action: {
+                    viewModel.updateUserPredictions(userPredictions)
+                    onPermissionRequest()
+                }, label:{
+                    Image(systemName: "key")
+                })
+                .disabled(!userPredictions.contains{
+                    item in !item.PredictionPermission
+                })
+                .buttonStyle(SquareButtonStyle())
+                .frame(width: 40)
             }
-            Spacer()
         }.padding()
         .onReceive(viewModel.$userPredictions){ userPredictions in
             self.userPredictions = userPredictions
