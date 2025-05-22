@@ -9,20 +9,25 @@ import Foundation
 import OrderedCollections
 import ArctopSDK
 import SwiftUI
-struct PredictionDataModel{
+struct PredictionDataModel : Identifiable{
+    var id: String
+    
     public let PredictionId:String
     public let PredictionName:String
     public let PredictionTitle:String
     public let CalibrationStatus:UserCalibrationStatus
     public let iconKey:String
+    public let PredictionPermission:Bool
     public var isSelected:Bool = false
      init(data : ArctopPredictionData) {
-        self.PredictionId = data.PredictionId
-        self.CalibrationStatus = data.CalibrationStatus
-        self.PredictionName = data.PredictionName
-        self.PredictionTitle = data.PredictionTitle
+        self.PredictionId = data.predictionId
+        self.CalibrationStatus = data.calibrationStatus
+        self.PredictionName = data.predictionName
+        self.PredictionTitle = data.predictionTitle
         self.iconKey = data.iconKey
+        self.PredictionPermission = data.predictionPermissionStatus
         self.isSelected = false
+         self.id = PredictionId
     }
 }
 enum myViewState : String{
@@ -143,7 +148,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
             let result = try await sdk.isUserLoggedIn()
             DispatchQueue.main.async {
                 if (result){
-                    self.checkUserCalibrationStatus()
+                    self.loadUserData()
                 }
                 self.userLoggedInStatus = result
                 
@@ -155,10 +160,29 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         
     }
     
-    private func checkUserCalibrationStatus() {
-        self.userPredictions = sdk.checkUserCalibrationsStatus(predictionsIds: clientAllowedPredictions).map({ data in
+    public func updateUserPredictions(_ predictions: [PredictionDataModel]) {
+        self.userPredictions = predictions
+    }
+    
+    public func loadUserData() {
+        var newData = sdk.userPredictionsData.map({ data in
             PredictionDataModel(data: data)
         })
+       
+        // need to restore the isSelected value here.
+        for i in 0..<newData.count {
+            if let oldData = userPredictions.first(where: { newItem in
+                newItem.PredictionId == newData[i].PredictionId
+            }){
+                newData[i].isSelected = oldData.isSelected
+            }
+            
+        }
+        
+        DispatchQueue.main.async {
+            self.userPredictions = newData
+        }
+        
     }
     
     public func onSelectDevice(deviceID:String){
@@ -187,7 +211,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         switch (result){
             case .success(_):
                 DispatchQueue.main.async {
-                    self.checkUserCalibrationStatus()
+                    self.loadUserData()
                     self.userLoggedInStatus = true
                 }
             case .failure(_):

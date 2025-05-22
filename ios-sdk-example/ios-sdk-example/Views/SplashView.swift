@@ -51,13 +51,20 @@ struct SplashView : View {
                             
                             switch viewModel.myViewState {
                             case .start:
-                                    HomeView(userPredictions: $viewModel.userPredictions,
+                                    HomeView(viewModel: viewModel,
                                              onStartPredictions: viewModel.onStartPrediction,
                                              onLogoutClick:{
                                             Task{
                                                 await viewModel.logoutUser()
+                                                }
+                                            },
+                                             onPermissionRequest: {
+                                                    try? viewModel.sdk.requestPermissions(onComplete: {
+                                                        value in print(value)
+                                                        viewModel.loadUserData()
+                                                    })
                                             }
-                                        } )
+                                    )
                                 .errorAlert(error: $viewModel.lastError)
                             case .pair:
                                 PairDeviceView(muses: $viewModel.museList, onSelectDevice: viewModel.onSelectDevice).onAppear{
