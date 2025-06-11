@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email:String = ""
-    @State var password:String = ""
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: CombineViewModel
     var body: some View {
         
         LoadingView(isShowing: $viewModel.loadingShowing, loadingMessage: $viewModel.loadingMessage){

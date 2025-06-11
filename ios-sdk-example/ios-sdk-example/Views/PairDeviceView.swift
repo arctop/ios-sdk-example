@@ -1,16 +1,16 @@
 
 import SwiftUI
 public struct PairDeviceView: View {
-    @Binding var muses:[String]
+    @Binding var devices:[String]
     var onSelectDevice : (String) -> Void
-    public init(muses: Binding<[String]>, onSelectDevice: @escaping (String) -> Void) {
-        self._muses = muses
+    public init(devices: Binding<[String]>, onSelectDevice: @escaping (String) -> Void) {
+        self._devices = devices
         self.onSelectDevice = onSelectDevice
     }
     public var body: some View {
         NavigationView{
             VStack{
-                if ($muses.isEmpty){
+                if ($devices.isEmpty){
                     Spacer()
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle()).scaleEffect(3).padding(.bottom)
@@ -21,9 +21,9 @@ public struct PairDeviceView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle()).padding([.bottom, .top])
                     Spacer()
-                    ForEach($muses, id: \.self) { muse in
-                        Button(muse.wrappedValue){
-                            onSelectDevice(muse.wrappedValue)
+                    ForEach($devices, id: \.self) { device in
+                        Button(device.wrappedValue){
+                            onSelectDevice(device.wrappedValue)
                         }.buttonStyle(SquareButtonStyle(color: Color.accentColor , size: 12, font: .body))
                     }
                     Spacer()

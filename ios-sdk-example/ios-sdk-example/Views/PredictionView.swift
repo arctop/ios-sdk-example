@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PredictionView: View {
     @State var progressShowing:Bool = false
-    @ObservedObject var viewModel:ViewModel
+    @ObservedObject var viewModel:CombineViewModel
     @State var showRetryUpload = false
     @State var showingAddMarker = false
     @State var inputText = ""

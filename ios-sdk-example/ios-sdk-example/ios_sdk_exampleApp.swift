@@ -10,7 +10,7 @@ import ArctopSDK
 @main
 struct ios_sdk_exampleApp: App {
     @StateObject var hardwareMonitor = HardwareMonitorModel()
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = CombineViewModel()
     @StateObject var qaModel =  QAViewModel()
     init(){
     }

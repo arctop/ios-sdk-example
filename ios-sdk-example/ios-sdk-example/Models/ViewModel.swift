@@ -40,7 +40,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     @Published public var realtimePredictionValues: OrderedDictionary<String, Float> = [:]
     @Published public var realtimeMotionData: OrderedDictionary<String , [Float]> = [:]
     @Published var userLoggedInStatus:Bool = false
-    @Published var museList:[String] = []
+    @Published var deviceList:[String] = []
     @Published public var lastError:LocalizedAlertError? = nil
     @Published var loadingShowing = false
     @Published var loadingMessage: String = "Loading..."
@@ -90,9 +90,9 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         self.lastError = LocalizedAlertError(errorCode , title: "message")
     }
     
-    func onDeviceListUpdated(headwareDeviceList museDeviceList: [String]) {
+    func onDeviceListUpdated(headwareDeviceList: [String]) {
         DispatchQueue.main.async {
-            self.museList = museDeviceList
+            self.deviceList = headwareDeviceList
         }
     }
     

@@ -9,7 +9,7 @@ import SwiftUI
 import ArctopSDK
 struct SplashView : View {
     private let lightSplashImage = "splash-image"
-    @ObservedObject var viewModel:ViewModel
+    @ObservedObject var viewModel:CombineViewModel
     @ObservedObject var qaModel:QAViewModel
     @EnvironmentObject var hardwareMonitor: HardwareMonitorModel
     @Environment(\.colorScheme) var colorScheme
@@ -67,7 +67,7 @@ struct SplashView : View {
                                     )
                                 .errorAlert(error: $viewModel.lastError)
                             case .pair:
-                                PairDeviceView(muses: $viewModel.museList, onSelectDevice: viewModel.onSelectDevice).onAppear{
+                                    PairDeviceView(devices: $viewModel.deviceList, onSelectDevice: viewModel.onSelectDevice).onAppear{
                                     viewModel.scanForDevices()
                                 }.errorAlert(error: $viewModel.lastError)
                             case .qa:

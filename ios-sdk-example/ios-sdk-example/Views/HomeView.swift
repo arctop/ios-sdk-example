@@ -9,7 +9,7 @@ import SwiftUI
 import ArctopSDK
 struct HomeView: View {
     //@Binding var userPredictions:[PredictionDataModel]
-    @StateObject var viewModel : ViewModel
+    @StateObject var viewModel : CombineViewModel
     @State private var userPredictions: [PredictionDataModel] = []
     var onStartPredictions: () -> Void
     var onLogoutClick: () -> Void
