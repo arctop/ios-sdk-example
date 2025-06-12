@@ -36,7 +36,7 @@ struct PredictionView: View {
             if (progressShowing){
                VStack{
                      Spacer()
-                   SessionUploadView()
+                   SessionUploadView(viewModel: viewModel)
                        .frame(minWidth: 300, maxWidth: .infinity , minHeight: 400, maxHeight: .infinity)
                      Spacer()
                  }.animation(.default, value: progressShowing)

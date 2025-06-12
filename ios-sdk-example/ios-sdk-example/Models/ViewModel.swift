@@ -33,7 +33,9 @@ struct PredictionDataModel : Identifiable{
 enum myViewState : String{
     case start = "Start" , pair = "Pair" , qa = "QA" , prediction = "Prediction", summery = "Summery"
 }
-class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener, @unchecked Sendable{
+class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQAListener, ArctopSDKSessionUploadListener, @unchecked Sendable{
+    
+    
     public let sdk = ArctopSDKClient()
     @Published public var clientInit = false
     @Published public var realtimeQaValue: (Bool , QAFailureType) = (true, .passed)
@@ -47,6 +49,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     @Published var currentTime:String = ""
     @Published public private(set) var clientAllowedPredictions:[String] = []
     @Published public var userPredictions: [PredictionDataModel] = []
+    @Published var uploadProgress:Float = 0
     private let dateFormatter = DateFormatter()
     public private(set) var noSignalColor:Color = Color(hex:0xff0411)
     public private(set) var goodSignalColor:Color = Color(hex:0x6fe100)
@@ -65,6 +68,7 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
         super.init()
         sdk.registerListener(listener: self as ArctopSDKQAListener)
         sdk.registerListener(listener: self as ArctopSDKListener)
+        sdk.registerListener(listener: self as ArctopSDKSessionUploadListener)
         dateFormatter.dateFormat = "H : mm : ss:SSS"
         currentTime = dateFormatter.string(from: Date())
     }
@@ -127,6 +131,18 @@ class ViewModel : NSObject, ObservableObject , ArctopSDKListener , ArctopSDKQALi
     
     func onSessionComplete() {
         
+    }
+    
+    func onUploadStatus(status: ArctopSDK.UploadStatus) {
+        if (status == .starting){
+            onUploadProgress(percentage: 0)
+        }
+    }
+    
+    func onUploadProgress(percentage: Float) {
+        DispatchQueue.main.async {
+            self.uploadProgress = percentage
+        }
     }
     
     public func initClient() async{

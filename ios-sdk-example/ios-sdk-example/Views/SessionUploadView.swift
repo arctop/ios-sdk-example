@@ -8,17 +8,16 @@
 import SwiftUI
 import ArctopSDK
 struct SessionUploadView: View {
+    @ObservedObject var viewModel: CombineViewModel
+    @State var uploadProgress :Float = 0.0
     var body: some View {
         VStack{
             ProgressView(){
-                Text("Uploading...")
+                Text("Uploading... \(Int(uploadProgress))%")
             }.progressViewStyle(.circular)
+            .onReceive(viewModel.$uploadProgress){
+                newValue in self.uploadProgress = newValue
+            }
         }
-    }
-}
-
-struct SessionUploadView_Previews: PreviewProvider {
-    static var previews: some View {
-        SessionUploadView()
     }
 }

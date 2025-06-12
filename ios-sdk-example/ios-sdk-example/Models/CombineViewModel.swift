@@ -1,12 +1,4 @@
 //
-//  PredictionDataModel.swift
-//  ios-sdk-example
-//
-//  Created by Shai Kalev on 6/11/25.
-//
-
-
-//
 //  ViewModel.swift
 //  ios-sdk-example
 //
@@ -36,6 +28,7 @@ class CombineViewModel : NSObject, ObservableObject,  @unchecked Sendable{
     public var onHeadbandStatus: (Bool) -> Void = {_ in}
     @Published var myViewState : myViewState = .start
     @Published var batteryPower:Float = -1
+    @Published var uploadProgress:Float = 0
     private let dateFormatter = DateFormatter()
     public private(set) var noSignalColor:Color = Color(hex:0xff0411)
     public private(set) var goodSignalColor:Color = Color(hex:0x6fe100)
@@ -104,6 +97,13 @@ class CombineViewModel : NSObject, ObservableObject,  @unchecked Sendable{
                 self?.batteryPower = data
             }
             .store(in: &cancellables)
+        sdk.sdkObserables.uploadProgressPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                self?.uploadProgress = data
+            }
+            .store(in: &cancellables)
+        
     }
     
    
